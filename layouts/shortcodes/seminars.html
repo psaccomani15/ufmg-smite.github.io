@@ -18,7 +18,7 @@
               {{- if or $t.link $t.slides }}
                 <div class="seminar-links">
                   {{- with $t.link }}<a href="{{ . }}" target="_blank" rel="noopener">Paper</a>{{ end -}}
-                  {{- with $t.slides }}<a href="{{ . }}" target="_blank" rel="noopener">Slides</a>{{ end -}}
+                  {{- with $t.slides }}<a href="{{ . | relURL }}" target="_blank" rel="noopener">Slides</a>{{ end -}}
                 </div>
               {{- end }}
             </li>
@@ -30,7 +30,7 @@
               {{- if or $p.url $p.slides }}
                 <div class="seminar-links">
                   {{- with $p.url }}<a href="{{ . }}" target="_blank" rel="noopener">Paper</a>{{ end -}}
-                  {{- with $p.slides }}<a href="{{ . }}" target="_blank" rel="noopener">Slides</a>{{ end -}}
+                  {{- with $p.slides }}<a href="{{ . | relURL }}" target="_blank" rel="noopener">Slides</a>{{ end -}}
                 </div>
               {{- end }}
             </li>

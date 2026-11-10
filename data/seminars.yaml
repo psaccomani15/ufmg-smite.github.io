@@ -4,9 +4,10 @@
 # Fields: date,
 #   talks:  speaker, url (speaker's page, for visitors), and either title (talk title)
 #           or topic (description when no title was announced); note, link (paper/work),
-#           slides (link to the file in the group's shared Google Drive folder)
+#           slides (path of the PDF under static/, e.g. slides/20261106-robin-sat-based-subsumption.pdf)
 #   papers: the paper(s) discussed: title, authors, venue, url, slides (of the discussion)
-# Slide files in the shared folder are named Speaker-DD-MM-YYYY.pdf.
+# Slide files are hosted on the site, in static/slides/, named YYYYMMDD-speaker-topic.pdf
+# (same names as in the group's shared Google Drive folder).
 
 - date: 2026-11-06
   talks:
@@ -16,24 +17,24 @@
       link: https://hanielbarbosa.com/papers/2026ijcar-skeletons.pdf
     - speaker: Robin Coutelier
       url: https://robcoutel.github.io/
-      topic: His past work on SAT-based subsumption resolution
+      title: SAT-Based Simplification Inferences in First-Order Theorem Proving
       note: CADE 2023
       link: https://robcoutel.github.io/publications/2023%20-%20SAT-Based%20Subsumption%20Resolution.pdf
-      slides: https://drive.google.com/file/d/1Wp7JFaqJxi2UUK7qBmJprKNtxjNC5BcJ/view
+      slides: slides/20261106-robin-sat-based-subsumption.pdf
   papers:
     - title: "PICID: Proof-Driven Clause Learning in Neural Network Verification"
       authors: Omri Isac, Idan Refaeli, Haoze Wu, Clark Barrett, Guy Katz
       venue: FMCAD 2026
       url: https://repositum.tuwien.at/handle/20.500.12708/230561
-      slides: https://drive.google.com/file/d/1Qdb5WKi-teCN4xJGGcoKSseiCUKI8ncU/view  # David Perera (discussion)
+      slides: slides/20261106-david-picid.pdf  # David Perera (discussion)
 
 - date: 2026-10-23
   talks:
     - speaker: Tomaz Mascarenhas
-      topic: Ongoing work on proofs for the Cylindrical Algebraic Decomposition/Coverings procedures
-      slides: https://drive.google.com/file/d/1HC-hl_MFfuDNdpxxZ3mEw4WC8d4hfzjs/view
+      title: Proofs for Cylindrical Algebraic Decomposition
+      slides: slides/20261023-tomaz-proofs-cad.pdf
     - speaker: Augusto Guerra de Lima
-      topic: A sums-of-squares approach for solving non-linear problems
+      topic: A Sums-of-Squares Approach for Solving Non-Linear Problems
   papers:
     - title: Bit-Precise Interpolation in Bitwuzla
       authors: Aina Niemetz, Mathias Preiner
@@ -43,8 +44,8 @@
 - date: 2026-10-09
   talks:
     - speaker: Pedro Saccomani and Vinícius Magri
-      topic: Ongoing work on bit-vector problems solving
-      slides: https://drive.google.com/file/d/1oozL4vJf6E373YlVEUiCeU6XgtMSCRtn/view
+      title: Non Bit-Blasting Bit-Vector Solving
+      slides: slides/20261009-pedro-nonbitblasting-bitvector.pdf
   papers:
     - title: Arithmetic Solving in Z3
       authors: Nikolaj Bjørner, Lev Nachmanson
@@ -73,10 +74,10 @@
       title: Proof Production for Satisfiability Modulo Finite Fields with Proof Checking in Pacheck and Lean
       note: FMCAD 2026, talk rehearsal
       link: https://psaccomani15.github.io/papers/saccomani2026-smt-finite-fields.pdf
-      slides: https://drive.google.com/file/d/14p2yIXS8WLJa2T2bstJb_oAt9L0vhOSi/view
+      slides: slides/20260911-pedro-finite-fields.pdf
     - speaker: Robin Coutelier
       url: https://robcoutel.github.io/
-      topic: Chronological backtracking and his recent work on graph backtracking
+      title: Chronological and Graph Backtracking
       link: https://robcoutel.github.io/publications/2026%20-%20Generalizing_CDCL_with_Graph_Backtracking.pdf
   papers:
     - title: Satisfiability Modulo Extensional Constant Arrays
@@ -102,7 +103,7 @@
 - date: 2026-06-26
   talks:
     - speaker: Mallku Soldevila
-      topic: Updates on the mechanization of the Alethe standard in the Eunoia language
+      topic: Updates on the Mechanization of the Alethe Standard in the Eunoia Language
   papers:
     - title: Towards SMT Solver Stability via Input Normalization
       authors: Daneshvar Amrollahi et al.
@@ -112,7 +113,7 @@
 - date: 2026-06-12
   talks:
     - speaker: David Perera
-      title: Key lemma extraction from SMT proof skeletons
+      title: Key Lemma Extraction from SMT Proof Skeletons
   papers:
     - title: "130k Lines of Formal Topology in Two Weeks: Simple and Cheap Autoformalization for Everyone?"
       authors: Josef Urban
@@ -155,7 +156,7 @@
 - date: 2026-03-20
   talks:
     - speaker: Tiago Campos
-      title: Reconstructing computational rewrite rules in Rare
+      title: Reconstructing Computational Rewrite Rules in Rare
   papers:
     - title: Canonical for Automated Theorem Proving in Lean
       authors: Chase Norman, Jeremy Avigad
@@ -175,7 +176,7 @@
 - date: 2025-11-14
   talks:
     - speaker: Ciarán Dunne
-      topic: Compiling formal systems written in the Eunoia logical framework into Lambdapi
+      topic: Compiling Formal Systems Written in the Eunoia Logical Framework into Lambdapi
   papers:
     - title: Validating SMT Rewriters via Rewrite Space Exploration Supported by Generative Equality Saturation
       authors: Maolin Sun et al.
@@ -188,7 +189,7 @@
       title: On Producing Proof for Finite Fields
       note: FMCAD 2025 poster
   papers:
-    - title: Interactive Bit Vector Reasoning using Verified Bitblasting
+    - title: Interactive Bit Vector Reasoning Using Verified Bitblasting
       authors: Henrik Böving et al.
       venue: OOPSLA 2025
       url: https://dl.acm.org/doi/10.1145/3763167
@@ -207,9 +208,9 @@
 - date: 2025-09-12
   talks:
     - speaker: Vinicius Gomes
-      title: Formalizing String theory in the Alethe proof format and verifying with Carcara
+      title: Formalizing String Theory in the Alethe Proof Format and Verifying with Carcara
   papers:
-    - title: Revisiting DRUP-based Interpolants with CaDiCaL 2.0
+    - title: Revisiting DRUP-Based Interpolants with CaDiCaL 2.0
       authors: Basel Khouri, Yakir Vizel
       venue: TACAS 2025
       url: https://link.springer.com/chapter/10.1007/978-3-031-90653-4_5
@@ -217,7 +218,7 @@
 - date: 2025-08-29
   talks:
     - speaker: Mallku Soldevila
-      title: "\"Saudade\": memories of my first year working in the SMITE group"
+      title: "\"Saudade\": Memories of My First Year Working in the SMITE Group"
   papers:
     - title: Lazy Reimplication in Chronological Backtracking
       authors: Robin Coutelier, Mathias Fleury, Laura Kovács
@@ -227,7 +228,7 @@
 - date: 2025-06-02
   talks:
     - speaker: Mallku Soldevila
-      title: Neuroscience for problem-solving and learning
+      title: Neuroscience for Problem-Solving and Learning
       note: based on the course "Learning How to Learn"
       link: https://www.coursera.org/learn/learning-how-to-learn/
   papers:
@@ -239,7 +240,7 @@
 - date: 2025-05-19
   talks:
     - speaker: David Perera
-      title: Ambiguity and Invariance In Machine Listening
+      title: Ambiguity and Invariance in Machine Listening
   papers:
     - title: "Veil: A Framework for Automated and Interactive Verification of Transition Systems"
       authors: George Pîrlea, Vladimir Gladshtein, Elad Kinsbruner, Qiyuan Zhao, Ilya Sergey
