@@ -37,6 +37,7 @@ body > header {
   right: 0;
   z-index: 1000;
   padding: 0.3rem 0.5rem;
+  border-bottom: none;  /* the theme's light line would cut across the red of the hero */
 }
 
 body > header > *:only-child {
@@ -94,6 +95,23 @@ header nav a:visited {
     background: none;
     border-color: var(--border);
     color: var(--text);
+  }
+}
+
+/* Phones: tighter buttons, so that more sections fit before the ☰ dropdown */
+@media only screen and (max-width: 520px) {
+  header nav a,
+  header nav a:visited {
+    margin: 0 0.2rem 1rem 0.2rem;
+    padding: 0.1rem 0.55rem;
+    font-size: 0.95rem;
+  }
+
+  .nav-more-button,
+  .nav-more-button:enabled:hover {
+    margin: 0 0.2rem 1rem 0.2rem;
+    padding: 0.1rem 0.6rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -163,6 +181,14 @@ header nav a:visited {
   color: var(--text);
 }
 
+/* the section in view (aria-current, set by the script in custom_body.html) is only
+   coloured inside the dropdown; in the bar the theme gives it the accent border */
+.nav-more-menu a[aria-current="true"] {
+  background: none;
+  border-color: transparent;
+  color: var(--accent);
+}
+
 /* the dropdown's own border already draws the outer lines of the first and last items */
 .nav-more-menu a:first-child {
   border-top: none;
@@ -196,17 +222,15 @@ p, h1, h2, h3, h4, h5, h6 {
  * Hero banner: full-width strip with the logo, at the top of the home page
  * ------------------------------------------------------------------------- */
 
+/* The strip is the page's <h1>. Its background is extended to both edges of the window with
+   a clipped box-shadow rather than width: 100vw, which counts the scrollbar and made the
+   page scroll sideways. */
 .hero {
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw !important;
-  margin-right: -50vw !important;
-  width: 100vw;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding: 0px 0px;
+  margin: 0;
+  padding: 0;
   background-color: var(--accent-bg);
+  box-shadow: 0 0 0 100vmax var(--accent-bg);
+  clip-path: inset(0 -100vmax);
   text-align: center;
 }
 
@@ -220,6 +244,26 @@ p, h1, h2, h3, h4, h5, h6 {
 /* ---------------------------------------------------------------------------
  * News (layouts/shortcodes/news.html)
  * ------------------------------------------------------------------------- */
+
+/* The list scrolls inside a short box instead of taking the full page height. */
+.news {
+  max-height: 25vh;
+  min-height: 150px;
+  overflow-y: auto;
+  padding-right: 10px;
+  /* the bottom of the box fades out, as a hint that the list goes on; the padding lets
+     the last item scroll clear of the fade */
+  padding-bottom: 2.5rem;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 2.5rem), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 2.5rem), transparent);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.news:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
 
 .news-row {
   display: grid;
@@ -237,6 +281,24 @@ p, h1, h2, h3, h4, h5, h6 {
 .news-content ul {
   margin: 0;
   padding-left: 20px;
+}
+
+/* Phones: the date goes above the text (as for the publications and seminars), and the
+   box is taller, so that a few items are visible at once */
+@media only screen and (max-width: 720px) {
+  .news {
+    max-height: 45vh;
+    min-height: 260px;
+  }
+
+  .news-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .news-date {
+    text-align: left;
+  }
 }
 
 /* ---------------------------------------------------------------------------
@@ -447,6 +509,58 @@ html:not(.hover-js) .pub-content li:hover,
   white-space: pre-wrap;
 }
 
+/* "Show 8 more publications / seminars" button, added under the list by the script in
+   custom_body.html, which also hides the items not shown yet (hidden attribute; the rule
+   below is needed because .pub-row and .seminar-row set their own display).
+   The button looks like the ones in the menu (overrides the theme's button style). */
+[data-more-item] [hidden] {
+  display: none;
+}
+
+.more-button,
+.more-button:enabled:hover {
+  display: block;
+  margin: 10px auto 0 auto;
+  padding: 0.3rem 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background: none;
+  color: var(--text);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--standard-border-radius);
+}
+
+@media (hover: hover) {
+  .more-button:enabled:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+
+/* Touch screens: the small links (DOI, PDF, BibTeX, Paper, ...) get a taller tap area */
+@media (pointer: coarse) {
+  .pub-links,
+  .seminar-links {
+    font-size: 0.9rem;
+  }
+
+  .pub-links > a,
+  .seminar-links > a,
+  .pub-bibtex > summary {
+    display: inline-block;
+    padding: 8px 0;
+    margin-right: 1.2em;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Footer (layouts/partials/custom_footer.html)
+ * ------------------------------------------------------------------------- */
+
+.site-footer {
+  margin: 0 0 0.5rem 0;
+}
+
 /* ---------------------------------------------------------------------------
  * Team (layouts/shortcodes/team.html)
  * ------------------------------------------------------------------------- */
@@ -462,11 +576,29 @@ html:not(.hover-js) .pub-content li:hover,
   border-radius: 12px;
 }
 
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 40px;
+/* Team: one centred row per role (and one for the past members). The cards shrink (photo included) so that
+   the whole role fits on its row. */
+.team-rows {
   margin: 40px 0;
+}
+
+.team-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.team-row .team-member {
+  flex: 0 1 200px;
+  min-width: 0;
+}
+
+.team-row .team-member img {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  aspect-ratio: 1 / 1;
 }
 
 .team-member {
@@ -501,10 +633,23 @@ html:not(.hover-js) .pub-content li:hover,
 /* Phones: smaller photos and spacing, so that 2-3 members fit per row instead of 1
    (wider screens keep the large photos) */
 @media only screen and (max-width: 520px) {
-  .team-grid {
-    grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
-    gap: 24px 12px;
+  /* a role with many members wraps onto several lines instead of shrinking further */
+  .team-rows {
     margin: 24px 0;
+  }
+
+  .team-row {
+    flex-wrap: wrap;
+    gap: 24px 12px;
+    margin-bottom: 24px;
+  }
+
+  .team-row .team-member {
+    flex: 0 0 95px;
+  }
+
+  .team-row .team-member img {
+    max-width: 90px;
   }
 
   .team-member img {

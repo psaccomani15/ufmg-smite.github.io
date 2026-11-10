@@ -1,18 +1,42 @@
+
 {{ with site.Data.team.group_photo }}
+{{- /* The column is at most 720px wide: serve the photo at 1440px (2x) instead of full size. */ -}}
+{{- $src := .image | relURL -}}
+{{- $w := "" -}}
+{{- $h := "" -}}
+{{- with resources.Get .image -}}
+  {{- $r := . -}}
+  {{- if gt .Width 1440 }}{{ $r = .Resize "1440x" }}{{ end -}}
+  {{- $src = $r.RelPermalink -}}
+  {{- $w = $r.Width -}}
+  {{- $h = $r.Height -}}
+{{- end }}
 <figure class="team-photo">
-  <img src="{{ .image | relURL }}" alt="{{ .caption | default "SMITE team" }}" loading="lazy">
+  <img src="{{ $src }}" alt="{{ .caption | default "SMITE team" }}"{{ with $w }} width="{{ . }}"{{ end }}{{ with $h }} height="{{ . }}"{{ end }} loading="lazy" decoding="async">
   {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
 </figure>
 {{ end }}
 
+{{- /* Current members, one row per role, in the order the roles first appear in
+       data/team.yaml. A role listed in $sameRow shares the row of another role. */ -}}
+{{- $sameRow := dict "Post-doctoral scholar" "Tenured Assistant Professor" -}}
+{{- $current := site.Data.team.current -}}
+{{- $rows := slice -}}
+{{- range $current }}{{ $rows = $rows | append (index $sameRow .role | default .role) }}{{ end -}}
 <h3 id="current-members">Current members</h3>
-<div class="team-grid">
-  {{ range site.Data.team.current }}{{ partial "team-member.html" . }}{{ end }}
+<div class="team-rows">
+  {{- range $row := $rows | uniq }}
+  <div class="team-row">
+    {{ range $current }}{{ if eq (index $sameRow .role | default .role) $row }}{{ partial "team-member.html" . }}{{ end }}{{ end }}
+  </div>
+  {{- end }}
 </div>
 
 {{ with site.Data.team.past }}
 <h3 id="past-members">Past members</h3>
-<div class="team-grid">
-  {{ range . }}{{ partial "team-member.html" . }}{{ end }}
+<div class="team-rows">
+  <div class="team-row">
+    {{ range . }}{{ partial "team-member.html" . }}{{ end }}
+  </div>
 </div>
 {{ end }}

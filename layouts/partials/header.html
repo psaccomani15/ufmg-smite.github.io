@@ -1,13 +1,11 @@
 <nav>{{- partial "nav.html" . -}}</nav>
-{{- if not (eq .Kind "404") }}
-  <!-- {{ if .IsHome }}
-    <img src='{{ "img/smite-logo-tag-1-cinza@2x.png" | relURL }}' alt="SMITE Lab Logo" class="site-logo">
-  {{ else }} -->
+{{- /* The header is a fixed bar holding only the menu on the home page, whose <h1> is the
+       hero logo (content/_index.md). Other pages get their title here. */ -}}
+{{- if not (or .IsHome (eq .Kind "404")) }}
   {{- with .Title }}
     <h1>{{ . }}</h1>
   {{- end }}
-  <!-- {{ end }} -->
+  {{- with .Description }}
+    <p>{{ . }}</p>
+  {{- end }}
 {{- end }}
-{{ with .Description }}
-  <p>{{ . }}</p>
-{{ end }}

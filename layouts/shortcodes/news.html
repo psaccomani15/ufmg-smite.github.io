@@ -1,4 +1,6 @@
-<div class="news">
+{{- /* News, from data/news.yaml. The list scrolls inside a short box (.news in custom.css);
+       tabindex makes that box reachable and scrollable from the keyboard. */ -}}
+<div class="news" role="region" aria-label="News" tabindex="0">
   {{ range sort site.Data.news "date" "desc" }}
     <div class="news-row">
 

@@ -1,16 +1,20 @@
 {{- /* Group seminars, from data/seminars.yaml. Same layout as the publications:
-       date column on the left, one bullet per presentation, then the paper discussion. */ -}}
-<div class="seminars">
-  {{ range sort site.Data.seminars "date" "desc" }}
+       date column on the left, one bullet per presentation, then the paper discussion.
+       Only the latest data-more-initial seminars are shown at first; a button reveals
+       data-more-step more at a time (script in layouts/partials/custom_body.html).
+       Without JavaScript the whole list is shown. */ -}}
+<div class="seminars" data-more-item=".seminar-row"
+     data-more-initial="5" data-more-step="8" data-more-label="seminars">
+  {{ range $s := sort site.Data.seminars "date" "desc" }}
     <div class="seminar-row">
 
       <div class="seminar-date">
-        {{ time.Format "2006-01-02" .date }}
+        {{ time.Format "2006-01-02" $s.date }}
       </div>
 
       <div class="seminar-content">
         <ul>
-          {{ range $t := .talks }}
+          {{ range $t := $s.talks }}
             <li>
               <strong>{{ $t.title | default $t.topic }}</strong><br>
               {{ if $t.url }}<a href="{{ $t.url }}" target="_blank" rel="noopener">{{ $t.speaker }}</a>{{ else }}{{ $t.speaker }}{{ end }}
@@ -23,7 +27,7 @@
               {{- end }}
             </li>
           {{ end }}
-          {{ range $p := .papers }}
+          {{ range $p := $s.papers }}
             <li class="seminar-paper">
               Paper discussion: <em>{{ $p.title }}</em><br>
               <span class="seminar-note">{{ $p.authors }}{{ with $p.venue }} · {{ . }}{{ end }}</span>
@@ -41,4 +45,3 @@
     </div>
   {{ end }}
 </div>
-

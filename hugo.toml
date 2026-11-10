@@ -8,6 +8,22 @@ name = "Caio Raposo and David Perera"
 
 [params]
   hideRSSLink = true
+  # Used for the search-engine description and for link previews (Open Graph / Twitter cards)
+  description = "SMITE is a research group at DCC/UFMG working on formal methods, SMT solving, proof systems and automated reasoning."
+  images = ["img/team/team_2026.jpg"]
+
+# static/img is also mounted as assets/img, so that the templates can resize the photos at
+# build time (layouts/partials/team-member.html, layouts/shortcodes/team.html).
+[module]
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static/img"
+    target = "assets/img"
 
 [markup.goldmark.renderer]
   unsafe = true

@@ -1,8 +1,12 @@
-{{- /* Publications, from data/publications.json (generated from bib/publications.bib by scripts/bib2json.py). */ -}}
+{{- /* Publications, from data/publications.json (generated from bib/publications.bib by scripts/bib2json.py).
+       Only the latest data-more-initial publications are shown at first; a button reveals
+       data-more-step more at a time (script in layouts/partials/custom_body.html).
+       Without JavaScript the whole list is shown. */ -}}
 {{- $pubs := site.Data.publications -}}
 {{- $years := slice -}}
 {{- range $pubs }}{{ $years = $years | append .year }}{{ end -}}
-<div class="publications">
+<div class="publications" data-more-item=".pub-content li" data-more-group=".pub-row"
+     data-more-initial="8" data-more-step="8" data-more-label="publications">
   {{ range sort ($years | uniq) "value" "desc" }}
     {{ $year := . }}
     <div class="pub-row">

@@ -66,4 +66,77 @@
     layout();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
   })();
+
+  /* Marks the menu entry of the section in view (aria-current="true", styled by the theme
+     and by custom.css). The section in view is the last one whose heading has passed under
+     the fixed header; "About" (#top) stands for the first section. */
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll("body > header nav a[href^='#']"));
+    var heads = Array.prototype.slice.call(document.querySelectorAll("main h2[id]"));
+    if (!links.length || !heads.length) return;
+    var pending = false;
+    function update() {
+      pending = false;
+      var id = heads[0].id;
+      heads.forEach(function (h) { if (h.getBoundingClientRect().top <= 150) id = h.id; });
+      var doc = document.documentElement;
+      if (window.innerHeight + window.scrollY >= doc.scrollHeight - 2) id = heads[heads.length - 1].id;
+      links.forEach(function (a) {
+        var target = a.getAttribute("href").slice(1);
+        if (target === "top") target = heads[0].id;
+        if (target === id) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      });
+    }
+    function schedule() {
+      if (!pending) { pending = true; requestAnimationFrame(update); }
+    }
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    update();
+  })();
+
+  /* Long lists (publications, seminars): show the first data-more-initial items and add a
+     button that reveals data-more-step more per click; once everything is shown, the
+     button folds the list back. A group (a year of publications) is hidden while none of
+     its items is shown. */
+  (function () {
+    Array.prototype.forEach.call(document.querySelectorAll("[data-more-item]"), function (box) {
+      var items = Array.prototype.slice.call(box.querySelectorAll(box.dataset.moreItem));
+      var groups = box.dataset.moreGroup
+        ? Array.prototype.slice.call(box.querySelectorAll(box.dataset.moreGroup)) : [];
+      var initial = parseInt(box.dataset.moreInitial, 10);
+      var step = parseInt(box.dataset.moreStep, 10);
+      var label = box.dataset.moreLabel;
+      if (items.length <= initial) return;
+      var shown = initial;
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "more-button";
+      box.appendChild(button);
+
+      function render() {
+        items.forEach(function (el, i) { el.hidden = i >= shown; });
+        groups.forEach(function (g) {
+          g.hidden = !items.some(function (el) { return !el.hidden && g.contains(el); });
+        });
+        var left = items.length - shown;
+        button.textContent = left > 0
+          ? "Show " + Math.min(step, left) + " more " + label + " (" + left + " remaining)"
+          : "Show fewer " + label;
+      }
+
+      button.addEventListener("click", function () {
+        if (shown < items.length) {
+          shown = Math.min(items.length, shown + step);
+          render();
+        } else {
+          shown = initial;
+          render();
+          button.scrollIntoView({ block: "center" });  // the list above just got much shorter
+        }
+      });
+      render();
+    });
+  })();
 </script>

@@ -1,10 +1,18 @@
-{{- /* One card in the Team section. Context: an entry of data/team.yaml. */ -}}
+{{- /* One card in the Team section. Context: an entry of data/team.yaml.
+       The photo is shown at 140px, so larger files are scaled down to 280px (2x) at build
+       time (static/img is also mounted as assets/img, see hugo.toml). */ -}}
 {{- $img := "img/team/default.jpg" -}}
 {{- with .image -}}
   {{- if fileExists (path.Join "static" .) }}{{ $img = . }}{{ end -}}
 {{- end -}}
+{{- $src := $img | relURL -}}
+{{- with resources.Get $img -}}
+  {{- if or (gt .Width 280) (gt .Height 280) -}}
+    {{- $src = (.Fill "280x280 Center").RelPermalink -}}
+  {{- end -}}
+{{- end -}}
 <div class="team-member">
-  {{- $photo := printf `<img src="%s" alt="%s">` ($img | relURL) (.name | htmlEscape) | safeHTML -}}
+  {{- $photo := printf `<img src="%s" alt="%s" width="140" height="140" loading="lazy" decoding="async">` $src (.name | htmlEscape) | safeHTML -}}
   {{- with .url }}
     <a href="{{ . }}" target="_blank" rel="noopener">{{ $photo }}</a>
   {{- else }}
