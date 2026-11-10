@@ -1,0 +1,20 @@
+{{- /* One card in the Team section. Context: an entry of data/team.yaml. */ -}}
+{{- $img := "img/team/default.jpg" -}}
+{{- with .image -}}
+  {{- if fileExists (path.Join "static" .) }}{{ $img = . }}{{ end -}}
+{{- end -}}
+<div class="team-member">
+  {{- $photo := printf `<img src="%s" alt="%s">` ($img | relURL) (.name | htmlEscape) | safeHTML -}}
+  {{- with .url }}
+    <a href="{{ . }}" target="_blank" rel="noopener">{{ $photo }}</a>
+  {{- else }}
+    {{ $photo }}
+  {{- end }}
+  <div class="team-info">
+    <div class="team-name">{{ .name }}</div>
+    <div class="team-role">{{ .role }}</div>
+    {{- if .until }}
+      <div class="team-role">{{ .since }} – {{ .until }}</div>
+    {{- end }}
+  </div>
+</div>

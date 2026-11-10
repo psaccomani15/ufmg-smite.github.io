@@ -1,0 +1,12 @@
+{{- /* Top menu (overrides the theme's nav.html). The links that do not fit on one line are
+       moved into the ☰ dropdown by the script in layouts/partials/custom_body.html. */ -}}
+<div class="nav-links">
+  {{- range .Site.Menus.main.ByWeight }}
+    <a href="{{ .URL }}">{{ .Name }}</a>
+  {{- end }}
+</div>
+<div class="nav-more" hidden>
+  <button type="button" class="nav-more-button" aria-label="More sections" aria-haspopup="true"
+          aria-expanded="false" aria-controls="nav-more-menu">☰</button>
+  <div class="nav-more-menu" id="nav-more-menu"></div>
+</div>

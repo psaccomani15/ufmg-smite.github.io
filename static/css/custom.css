@@ -1,0 +1,525 @@
+/*
+ * SMITE site styles.
+ *
+ * Loaded after the hugo-simple theme stylesheets (simple.css + style.css,
+ * see layouts/baseof.html), so this file only holds overrides of the theme
+ * and styles for the site's own components. Anything not set here comes
+ * from themes/hugo-simple/assets/simple.css.
+ */
+
+/* ---------------------------------------------------------------------------
+ * Color palette: dark theme regardless of the visitor's color-scheme setting.
+ * --border and --marked are inherited from the theme.
+ * ------------------------------------------------------------------------- */
+
+:root {
+  color-scheme: dark;
+  --bg: #101820;
+  --accent-bg: #971b2f;
+  --text: #d9d9d6;
+  --text-light: #ababab;
+  --accent: #ffb300;
+  --accent-hover: #ffe099;
+  --accent-text: var(--bg);
+  --code: #ee2737;
+  --preformatted: #d9d9d6;
+  --disabled: #101820;
+}
+
+/* ---------------------------------------------------------------------------
+ * Layout: fixed header with the navigation menu
+ * ------------------------------------------------------------------------- */
+
+body > header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0.3rem 0.5rem;
+}
+
+body > header > *:only-child {
+  margin-block-start: 1rem;
+}
+
+header nav {
+  padding: 0;
+}
+
+/* Top menu (layouts/partials/nav.html): boxed buttons on a single line at every width;
+   the ones that do not fit go into the ☰ dropdown (script in layouts/partials/custom_body.html).
+   Without JavaScript the buttons simply wrap. */
+body > header nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 0;
+}
+
+html.nav-js .nav-links {
+  flex: 0 1 auto;
+  flex-wrap: nowrap;
+  justify-content: flex-start;  /* left-aligned overflow, so the script can measure it */
+  overflow: hidden;
+}
+
+header nav a,
+header nav a:visited {
+  flex: none;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* The theme turns the buttons into underlined links below 720px: keep the buttons */
+@media only screen and (max-width: 720px) {
+  header nav a,
+  header nav a:visited {
+    border: var(--border-width) solid var(--border);
+    padding: 0.1rem 1rem;
+    text-decoration: none;
+    line-height: 2;
+  }
+}
+
+/* Touch screens have no real hover: a tapped button would otherwise stay highlighted */
+@media (hover: none) {
+  header nav a:hover {
+    background: none;
+    border-color: var(--border);
+    color: var(--text);
+  }
+}
+
+.nav-more {
+  position: relative;
+  flex: none;
+}
+
+.nav-more[hidden] {
+  display: none;
+}
+
+/* the ☰ button looks like the menu buttons (overrides the theme's button style) */
+.nav-more-button,
+.nav-more-button:enabled:hover {
+  margin: 0 0.5rem 1rem 0.5rem;
+  padding: 0.1rem 0.9rem;
+  font-size: 1rem;
+  line-height: 2;
+  background: none;
+  color: var(--text);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--standard-border-radius);
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .nav-more-button:enabled:hover {
+    background: var(--bg);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+
+.nav-more-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% - 0.5rem);
+  right: 0.5rem;
+  z-index: 1001;
+  flex-direction: column;
+  padding: 0;  /* the hover band reaches the edges of the dropdown */
+  overflow: hidden;  /* clip the band to the rounded corners */
+  background: var(--accent-bg);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--standard-border-radius);
+}
+
+.nav-more-menu.open {
+  display: flex;
+}
+
+/* inside the dropdown, the sections are plain text (no box, no underline); on hover the
+   item is marked by a band across the full width of the dropdown (lines above and below) */
+.nav-more-menu a,
+.nav-more-menu a:visited,
+.nav-more-menu a:hover {
+  margin: 0;
+  padding: 0.15rem 1.2rem;
+  border: none;
+  border-top: var(--border-width) solid transparent;
+  border-bottom: var(--border-width) solid transparent;
+  border-radius: 0;
+  background: none;
+  text-align: left;
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* the dropdown's own border already draws the outer lines of the first and last items */
+.nav-more-menu a:first-child {
+  border-top: none;
+  padding-top: calc(0.15rem + var(--border-width));
+}
+
+.nav-more-menu a:last-child {
+  border-bottom: none;
+  padding-bottom: calc(0.15rem + var(--border-width));
+}
+
+@media (hover: hover) {
+  .nav-more-menu a:hover {
+    border-top-color: var(--border);
+    border-bottom-color: var(--border);
+    background: rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* Leave room for the fixed header above the content. */
+main {
+  padding-top: 50px;
+}
+
+/* Keep anchor targets (#news, #team, ...) clear of the fixed header. */
+p, h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 130px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Hero banner: full-width strip with the logo, at the top of the home page
+ * ------------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  width: 100vw;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0px 0px;
+  background-color: var(--accent-bg);
+  text-align: center;
+}
+
+.hero img {
+  width: min(80vw, 600px);
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+
+/* ---------------------------------------------------------------------------
+ * News (layouts/shortcodes/news.html)
+ * ------------------------------------------------------------------------- */
+
+.news-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.news-date {
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.news-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Publications (layouts/shortcodes/publications.html)
+ * ------------------------------------------------------------------------- */
+
+.publications {
+  margin: 30px 0;
+}
+
+.pub-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.pub-year {
+  text-align: right;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  padding-top: 5px;
+}
+
+/* Seminars section: same layout as the publications (date column + bullets),
+   with a light frame around the seminar under the pointer */
+
+.seminars {
+  margin: 30px 0;
+}
+
+.seminar-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  /* no margin between seminars: the spacing is padding, so the frames touch (no dead zone) */
+  margin: 0 -12px;
+  padding: 15px 12px;
+  border: var(--border-width) solid transparent;
+  border-radius: 8px;
+}
+
+/* .is-active is set by the script in layouts/partials/custom_body.html; plain :hover is the
+   fallback when JavaScript is off */
+html:not(.hover-js) .seminar-row:hover,
+.seminar-row.is-active {
+  border-color: var(--border);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.seminar-date {
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-light);
+  padding-top: 5px;
+}
+
+.seminar-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.seminar-content li {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.seminar-content li:last-child {
+  margin-bottom: 0;
+}
+
+.seminar-note {
+  color: var(--text-light);
+}
+
+.seminar-paper {
+  font-size: 0.95rem;
+}
+
+.seminar-links {
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.seminar-links > a {
+  margin-right: 0.9em;
+}
+
+@media only screen and (max-width: 720px) {
+  .seminar-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .seminar-date {
+    text-align: left;
+    padding-top: 0;
+  }
+}
+
+/* Let the text column shrink on narrow screens instead of overflowing */
+.pub-content,
+.seminar-content,
+.news-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media only screen and (max-width: 720px) {
+  .pub-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .pub-year {
+    text-align: left;
+    padding-top: 0;
+  }
+}
+
+.pub-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* Each publication gets a light frame on hover, like the seminars. The spacing between
+   items is padding (frames touch, no dead zone). The bullet is drawn inside the frame
+   (a native list bullet would stay outside the border). */
+.pub-content ul {
+  list-style: none;
+}
+
+.pub-content li {
+  position: relative;
+  line-height: 1.4;
+  margin: 0 -10px 0 -32px;
+  padding: 5px 10px 5px 32px;
+  border: var(--border-width) solid transparent;
+  border-radius: 8px;
+}
+
+.pub-content li::before {
+  content: "•";
+  position: absolute;
+  left: 13px;
+  top: 3px;
+  font-size: 1.3em;
+  line-height: 1.2;
+}
+
+html:not(.hover-js) .pub-content li:hover,
+.pub-content li.is-active {
+  border-color: var(--border);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Small links under each publication: DOI, PDF, ..., and the BibTeX toggle */
+.pub-links {
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.pub-links > a,
+.pub-bibtex > summary {
+  margin-right: 0.9em;
+}
+
+.pub-award {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+/* The theme styles <details> as a coloured box; keep the BibTeX toggle discreet */
+.pub-bibtex {
+  display: inline;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pub-bibtex > summary {
+  display: inline;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  color: var(--accent);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pub-bibtex > summary::marker,
+.pub-bibtex > summary::-webkit-details-marker {
+  display: none;
+  content: "";
+}
+
+.pub-bibtex[open] > pre {
+  display: block;
+  margin: 6px 0 4px 0;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.75rem;
+  background: var(--bg);
+  border: var(--border-width) solid var(--border);
+  white-space: pre-wrap;
+}
+
+/* ---------------------------------------------------------------------------
+ * Team (layouts/shortcodes/team.html)
+ * ------------------------------------------------------------------------- */
+
+.team-photo {
+  margin: 30px 0 10px 0;
+}
+
+.team-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 12px auto;
+  border: 2px solid var(--border);
+  transition: transform 0.2s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.05);
+}
+
+.team-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* Phones: smaller photos and spacing, so that 2-3 members fit per row instead of 1
+   (wider screens keep the large photos) */
+@media only screen and (max-width: 520px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+    gap: 24px 12px;
+    margin: 24px 0;
+  }
+
+  .team-member img {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 8px;
+  }
+
+  .team-name {
+    font-size: 0.95rem;
+    line-height: 1.25;
+  }
+
+  .team-role {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+}

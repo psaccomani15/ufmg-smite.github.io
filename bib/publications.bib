@@ -1,0 +1,765 @@
+% SMITE publications, shown in the Publications section of the website.
+%
+% This file is curated by hand. To add papers:
+%   python3 scripts/local/dblp2bib.py  -> prints DBLP entries of the members (data/team.yaml) not yet here
+%                                         (local helper script, not in the repository for now)
+%   copy the ones to keep below, then run: python3 scripts/bib2json.py   (also run by the deploy workflow)
+%
+% Besides the standard BibTeX fields, the website uses these optional fields
+% (BibTeX/BibLaTeX ignore them):
+%   venue    = short venue shown on the site, e.g. {TACAS 2026}   (defaults to booktitle/journal)
+%   pdf      = link to the paper PDF            slides   = link to the slides
+%   artifact = link to the artifact (Zenodo)    preprint = link to a preprint (e.g. arXiv)
+%   award    = award text, e.g. {Best Paper Award}
+% Entries are listed by year; order inside a year does not matter.
+
+@inproceedings{DBLP:conf/ijcar/ReevesBRH26,
+  author    = {Joseph Reeves and
+               Haniel Barbosa and
+               Andrew Reynolds and
+               Marijn Heule},
+  title     = {A General Approach for {SMT} Proof Skeletons},
+  booktitle = {Automated Reasoning - 13th International Joint Conference, IJCAR 2026, Lisbon, Portugal, July 26-29, 2026, Proceedings, Part I},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16688},
+  pages     = {156--174},
+  publisher = {Springer},
+  year      = {2026},
+  doi       = {10.1007/978-3-032-32589-1_10},
+  url       = {https://doi.org/10.1007/978-3-032-32589-1_10},
+  venue     = {IJCAR 2026},
+  pdf       = {https://hanielbarbosa.com/papers/2026ijcar-skeletons.pdf},
+}
+
+@misc{DBLP:data/12/BarbosaBKLLMMNNOPRSTZ26,
+  author    = {Haniel Barbosa and
+               Clark W. Barrett and
+               Lydia Kondylidou and
+               Hanna Lachnitt and
+               Daniel Larraz and
+               Abdalrhman Mohamed and
+               Mudathir Mohamed and
+               José Neto and
+               Aina Niemetz and
+               Alex Ozdemir and
+               Mathias Preiner and
+               Andrew Reynolds and
+               Hans-Jörg Schurr and
+               Cesare Tinelli and
+               Yoni Zohar},
+  title     = {{cvc5} for {SMT-COMP} {2026}},
+  howpublished = {Zenodo},
+  year      = {2026},
+  month     = {jun},
+  doi       = {10.5281/ZENODO.20571963},
+  url       = {https://doi.org/10.5281/ZENODO.20571963},
+  venue     = {SMT-COMP 2026 (system description)},
+}
+
+@inproceedings{DBLP:conf/ijcar/ReynoldsSSBBT26,
+  author    = {Andrew Reynolds and
+               Hans-Jörg Schurr and
+               Mallku Soldevila and
+               Haniel Barbosa and
+               Cesare Tinelli and
+               Clark Barrett},
+  title     = {Ethos: A Fast Proof Checker for the Eunoia Logical Framework},
+  booktitle = {Automated Reasoning - 13th International Joint Conference, IJCAR 2026, Lisbon, Portugal, July 26-29, 2026, Proceedings, Part I},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16688},
+  pages     = {305--314},
+  publisher = {Springer},
+  year      = {2026},
+  doi       = {10.1007/978-3-032-32589-1_19},
+  url       = {https://doi.org/10.1007/978-3-032-32589-1_19},
+  venue     = {IJCAR 2026},
+  pdf       = {https://hanielbarbosa.com/papers/2026ijcar-ethos.pdf},
+}
+
+% Hand-made entry (not in DBLP yet); replace with the DBLP entry when it appears.
+@inproceedings{SMITE:fmcad/MafraB26,
+  author    = {Augusto Mafra and
+               Haniel Barbosa},
+  title     = {Formal Verification of {Mixed-Signal} Systems Using Real Number Modeling with {SMT-based} Model Checking},
+  booktitle = {26th Conference on Formal Methods in Computer-Aided Design ({FMCAD} 2026)},
+  year      = {2026},
+  venue     = {FMCAD 2026 (short paper)},
+  pdf       = {https://hanielbarbosa.com/papers/2026fmcad-rnm.pdf},
+}
+
+@inproceedings{DBLP:conf/cpp/Mascarenhas0M0B26,
+  author    = {Tomaz Mascarenhas and
+               Harun Khan and
+               Abdal Mohamed and
+               Andrew Reynolds and
+               Haniel Barbosa and
+               Clark Barrett and
+               Cesare Tinelli},
+  title     = {Formalization of a Proof Calculus for Incremental Linearization for Satisfiability Modulo Nonlinear Arithmetic and Transcendental Functions},
+  booktitle = {Proceedings of the 15th ACM SIGPLAN International Conference on Certified Programs and Proofs, CPP 2026, Rennes, France, January 12-13, 2026},
+  pages     = {216--230},
+  publisher = {ACM},
+  year      = {2026},
+  doi       = {10.1145/3779031.3779111},
+  url       = {https://doi.org/10.1145/3779031.3779111},
+  venue     = {CPP 2026},
+  pdf       = {https://hanielbarbosa.com/papers/2026cpp.pdf},
+}
+
+@inproceedings{DBLP:conf/tacas/CluneBA26,
+  author    = {Joshua Clune and
+               Haniel Barbosa and
+               Jeremy Avigad},
+  title     = {{Hint-Based} {SMT} Proof Reconstruction},
+  booktitle = {Tools and Algorithms for the Construction and Analysis of Systems - 32nd International Conference, TACAS 2026, Held as Part of the International Joint Conferences on Theory and Practice of Software, ETAPS 2026, Turin, Italy, April 11-16, 2026, Proceedings, Part I},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16505},
+  pages     = {255--275},
+  publisher = {Springer},
+  year      = {2026},
+  doi       = {10.1007/978-3-032-22752-2_13},
+  url       = {https://doi.org/10.1007/978-3-032-22752-2_13},
+  venue     = {TACAS 2026, Springer},
+  pdf       = {https://hanielbarbosa.com/papers/2026tacas.pdf},
+}
+
+% Hand-made entry (not in DBLP yet); replace with the DBLP entry when it appears.
+@inproceedings{SMITE:fmcad/CamposTBB26,
+  author    = {Tiago Campos and
+               Sophie Tourret and
+               Jasmin Blanchette and
+               Haniel Barbosa},
+  title     = {{IsaAbduct}: A {Multi-Strategy} Abduction Pipeline for {Isabelle/HOL}},
+  booktitle = {26th Conference on Formal Methods in Computer-Aided Design ({FMCAD} 2026)},
+  year      = {2026},
+  venue     = {FMCAD 2026},
+  pdf       = {https://hanielbarbosa.com/papers/2026fmcad-isaabduct.pdf},
+}
+
+@inproceedings{DBLP:conf/vmcai/AndreottiB26,
+  author    = {Bruno Andreotti and
+               Haniel Barbosa},
+  title     = {Producing Shorter Congruence Closure Proofs in a {State-of-the-Art} {SMT} Solver},
+  booktitle = {Verification, Model Checking, and Abstract Interpretation - 27th International Conference, VMCAI 2026, Rennes, France, January 12-13, 2026, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16417},
+  pages     = {1--20},
+  publisher = {Springer},
+  year      = {2026},
+  doi       = {10.1007/978-3-032-15700-3_1},
+  url       = {https://doi.org/10.1007/978-3-032-15700-3_1},
+  venue     = {VMCAI 2026},
+  pdf       = {https://hanielbarbosa.com/papers/2026vmcai.pdf},
+}
+
+% Hand-made entry (not in DBLP yet); replace with the DBLP entry when it appears.
+@inproceedings{SMITE:fmcad/SaccomaniMPKTBB26,
+  author    = {Pedro Saccomani and
+               Abdalrhman Mohamed and
+               Elizaveta Pertseva and
+               Daniela Kaufmann and
+               Cesare Tinelli and
+               Clark Barrett and
+               Haniel Barbosa},
+  title     = {Proof Production for Satisfiability Modulo Finite Fields with Proof Checking in Pacheck and Lean},
+  booktitle = {Formal Methods in Computer-Aided Design, {FMCAD} 2026},
+  year      = {2026},
+  venue     = {FMCAD 2026},
+  pdf       = {https://hanielbarbosa.com/papers/2026fmcad-ffproofs.pdf},
+  artifact  = {https://doi.org/10.5281/zenodo.20133205},
+}
+
+@article{DBLP:journals/acta/ColtellacciABDM26,
+  author    = {Alessio Coltellacci and
+               Bruno Andreotti and
+               Haniel Barbosa and
+               Gilles Dowek and
+               Stephan Merz},
+  title     = {Reconstruction of {SMT} proofs with Lambdapi},
+  journal   = {Acta Informatica},
+  volume    = {63},
+  number    = {1},
+  pages     = {8},
+  year      = {2026},
+  month     = {mar},
+  doi       = {10.1007/S00236-025-00515-W},
+  url       = {https://doi.org/10.1007/S00236-025-00515-W},
+  venue     = {Acta Informatica, 2026},
+}
+
+@inproceedings{DBLP:conf/cav/ReynoldsSBIJLMNPZJBT26,
+  author    = {Andrew Reynolds and
+               Hans-Jörg Schurr and
+               Haniel Barbosa and
+               Ofec Israel and
+               Jibiana Zoe Jakpor and
+               Hanna Lachnitt and
+               Abdalrhman Mohamed and
+               Aina Niemetz and
+               Mathias Preiner and
+               Yoni Zohar and
+               Robert Jones and
+               Clark Barrett and
+               Cesare Tinelli},
+  title     = {The Cooperating Proof Calculus: Comprehensive Proofs for an {SMT} Solver},
+  booktitle = {Computer Aided Verification - 38th International Conference, CAV 2026, Lisbon, Portugal, July 26-29, 2026, Proceedings, Part II},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {16683},
+  pages     = {188--212},
+  publisher = {Springer},
+  year      = {2026},
+  doi       = {10.1007/978-3-032-32526-6_9},
+  url       = {https://doi.org/10.1007/978-3-032-32526-6_9},
+  venue     = {CAV 2026},
+  pdf       = {https://hanielbarbosa.com/papers/2026cav.pdf},
+}
+
+@article{DBLP:journals/fac/CarvalhoBLMN26,
+  author    = {Gustavo Carvalho and
+               Haniel Barbosa and
+               Lucas Lima and
+               Edjard Mota and
+               Sidney Nogueira},
+  title     = {The Past, Present, and Future of Formal Methods in Brazil},
+  journal   = {Formal Aspects Comput.},
+  volume    = {38},
+  number    = {4},
+  pages     = {36:1--36:34},
+  year      = {2026},
+  month     = {dec},
+  doi       = {10.1145/3845989},
+  url       = {https://doi.org/10.1145/3845989},
+  venue     = {Formal Aspects of Computing, 2026},
+}
+
+@misc{DBLP:data/11/BarbosaBLMMNNOPRSTWZ25,
+  author    = {Haniel Barbosa and
+               Clark W. Barrett and
+               Hanna Lachnitt and
+               Abdalrhman Mohamed and
+               Mudathir Mohamed and
+               José Neto and
+               Aina Niemetz and
+               Alex Ozdemir and
+               Mathias Preiner and
+               Andrew Reynolds and
+               Hans-Jörg Schurr and
+               Cesare Tinelli and
+               Amalee Wilson and
+               Yoni Zohar},
+  title     = {{cvc5} for {SMT-COMP} {2025}},
+  howpublished = {Zenodo},
+  year      = {2025},
+  month     = {jun},
+  doi       = {10.5281/ZENODO.15760304},
+  url       = {https://doi.org/10.5281/ZENODO.15760304},
+  venue     = {SMT-COMP 2025 (system description)},
+}
+
+@inproceedings{DBLP:conf/itp/LachnittFBJA0SB25,
+  author    = {Hanna Lachnitt and
+               Mathias Fleury and
+               Haniel Barbosa and
+               Jibiana Jakpor and
+               Bruno Andreotti and
+               Andrew Reynolds and
+               Hans-Jörg Schurr and
+               Clark W. Barrett and
+               Cesare Tinelli},
+  title     = {Improving the {SMT} Proof Reconstruction Pipeline in {Isabelle/HOL}},
+  booktitle = {16th International Conference on Interactive Theorem Proving, ITP 2025, Reykjavik, Iceland, September 28 - October 1, 2025},
+  series    = {LIPIcs},
+  volume    = {352},
+  pages     = {26:1--26:22},
+  publisher = {Schloss Dagstuhl - Leibniz-Zentrum für Informatik},
+  year      = {2025},
+  doi       = {10.4230/LIPICS.ITP.2025.26},
+  url       = {https://doi.org/10.4230/LIPICS.ITP.2025.26},
+  venue     = {ITP 2025},
+  pdf       = {https://hanielbarbosa.com/papers/2025itp.pdf},
+}
+
+@inproceedings{DBLP:conf/cav/MohamedMKBRQTB25,
+  author    = {Abdalrhman Mohamed and
+               Tomaz Mascarenhas and
+               Harun Khan and
+               Haniel Barbosa and
+               Andrew Reynolds and
+               Yicheng Qian and
+               Cesare Tinelli and
+               Clark W. Barrett},
+  title     = {{Lean-SMT}: An {SMT} Tactic for Discharging Proof Goals in Lean},
+  booktitle = {Computer Aided Verification - 37th International Conference, CAV 2025, Zagreb, Croatia, July 23-25, 2025, Proceedings, Part III},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {15933},
+  pages     = {197--212},
+  publisher = {Springer},
+  year      = {2025},
+  doi       = {10.1007/978-3-031-98682-6_11},
+  url       = {https://doi.org/10.1007/978-3-031-98682-6_11},
+  venue     = {CAV 2025},
+  pdf       = {https://hanielbarbosa.com/papers/2025cav.pdf},
+}
+
+@proceedings{DBLP:conf/sbmf/2023,
+  editor    = {Haniel Barbosa and
+               Yoni Zohar},
+  title     = {{26th} Brazilian Symposium on Formal Methods ({SBMF} 2023)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {14414},
+  publisher = {Springer},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-49342-3},
+  url       = {https://doi.org/10.1007/978-3-031-49342-3},
+  venue     = {LNCS 14414, 2024},
+}
+
+@misc{DBLP:data/11/AnivaBBLLMMNOPRSTWZ24,
+  author    = {Leni Aniva and
+               Haniel Barbosa and
+               Clark W. Barrett and
+               Hanna Lachnitt and
+               Daniel Larraz and
+               Abdalrhman Mohamed and
+               Mudathir Mohamed and
+               Aina Niemetz and
+               Alex Ozdemir and
+               Mathias Preiner and
+               Andrew Reynolds and
+               Hans-Jörg Schurr and
+               Cesare Tinelli and
+               Amalee Wilson and
+               Yoni Zohar},
+  title     = {{cvc5} for {SMT-COMP} {2024}},
+  howpublished = {Zenodo},
+  year      = {2024},
+  month     = {jun},
+  doi       = {10.5281/ZENODO.11581520},
+  url       = {https://doi.org/10.5281/ZENODO.11581520},
+  venue     = {SMT-COMP 2024 (system description)},
+}
+
+@inproceedings{DBLP:conf/tacas/LachnittFARBNBT24,
+  author    = {Hanna Lachnitt and
+               Mathias Fleury and
+               Leni Aniva and
+               Andrew Reynolds and
+               Haniel Barbosa and
+               Andres Nötzli and
+               Clark W. Barrett and
+               Cesare Tinelli},
+  title     = {{IsaRare}: Automatic Verification of {SMT} Rewrites in {Isabelle/HOL}},
+  booktitle = {Tools and Algorithms for the Construction and Analysis of Systems - 30th International Conference, TACAS 2024, Held as Part of the European Joint Conferences on Theory and Practice of Software, ETAPS 2024, Luxembourg City, Luxembourg, April 6-11, 2024, Proceedings, Part I},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {14570},
+  pages     = {311--330},
+  publisher = {Springer},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-57246-3_17},
+  url       = {https://doi.org/10.1007/978-3-031-57246-3_17},
+  venue     = {TACAS 2024, Springer},
+  pdf       = {https://hanielbarbosa.com/papers/tacas2024.pdf},
+}
+
+@inproceedings{DBLP:conf/sblp/RaposoP24,
+  author    = {Caio Raposo and
+               Fernando Magno Quintão Pereira},
+  title     = {Memoization of Mutable Objects},
+  booktitle = {Proceedings of the 28th Brazilian Symposium on Programming Languages, SBLP 2024, Curitiba, Brazil, September 30 - October 4, 2024},
+  pages     = {1--9},
+  publisher = {SBC},
+  year      = {2024},
+  doi       = {10.5753/SBLP.2024.3444},
+  url       = {https://doi.org/10.5753/SBLP.2024.3444},
+  venue     = {SBLP 2024},
+}
+
+@inproceedings{DBLP:conf/fm/BarrettTBNPRZ24,
+  author    = {Clark Barrett and
+               Cesare Tinelli and
+               Haniel Barbosa and
+               Aina Niemetz and
+               Mathias Preiner and
+               Andrew Reynolds and
+               Yoni Zohar},
+  title     = {Satisfiability Modulo Theories: A Beginner's Tutorial},
+  booktitle = {Formal Methods - 26th International Symposium, FM 2024, Milan, Italy, September 9-13, 2024, Proceedings, Part II},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {14934},
+  pages     = {571--596},
+  publisher = {Springer},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-71177-0_31},
+  url       = {https://doi.org/10.1007/978-3-031-71177-0_31},
+  venue     = {FM 2024 (Tutorial Track)},
+  pdf       = {https://hanielbarbosa.com/papers/fm2024.pdf},
+  artifact  = {https://zenodo.org/records/12763927},
+  award     = {Distinguished tutorial paper award},
+}
+
+@inproceedings{DBLP:conf/birthday/PereiraR24,
+  author    = {Fernando Magno Quintão Pereira and
+               Caio Raposo},
+  title     = {The Essence of the Flyweight Design Pattern},
+  booktitle = {Proceedings of the Workshop Dedicated to Jens Palsberg on the Occasion of His 60th Birthday, JENSFEST 2024, Pasadena, CA, USA, 22 October 2024},
+  pages     = {30--38},
+  publisher = {ACM},
+  year      = {2024},
+  doi       = {10.1145/3694848.3694855},
+  url       = {https://doi.org/10.1145/3694848.3694855},
+  venue     = {JENSFEST 2024},
+}
+
+@inproceedings{DBLP:conf/paar/AndreottiBF24,
+  author    = {Bruno Andreotti and
+               Haniel Barbosa and
+               Oliver Flatt},
+  title     = {Towards Producing Shorter Congruence Closure Proofs in a State-of-the-art {SMT} Solver (Extended Abstract)},
+  booktitle = {Joint Proceedings of the 9th Workshop on Practical Aspects of Automated Reasoning (PAAR) and the 9th Satisfiability Checking and Symbolic Computation Workshop (SC-Square), 2024 co-located with the 12th International Joint Conference on Automated Reasoning (IJCAR 2024), Nancy, France, July 2, 2024},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {3717},
+  pages     = {1--9},
+  publisher = {CEUR-WS.org},
+  year      = {2024},
+  venue     = {PAAR 2024},
+  pdf       = {https://hanielbarbosa.com/papers/paar2024.pdf},
+}
+
+@proceedings{DBLP:conf/scsquare/2022,
+  editor    = {Ali Kemal Uncu and
+               Haniel Barbosa},
+  title     = {{7th} {SC-Square} Workshop ({SC-Square@FLoC} 2022)},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {3458},
+  publisher = {CEUR-WS.org},
+  year      = {2023},
+  url       = {https://ceur-ws.org/Vol-3458/},
+  venue     = {CEUR 3458, 2023},
+}
+
+@inproceedings{DBLP:conf/lpar/BarbosaK0VTB23,
+  author    = {Haniel Barbosa and
+               Chantal Keller and
+               Andrew Reynolds and
+               Arjun Viswanathan and
+               Cesare Tinelli and
+               Clark Barrett},
+  title     = {An Interactive {SMT} Tactic in Coq using Abductive Reasoning},
+  booktitle = {LPAR 2023: Proceedings of 24th International Conference on Logic for Programming, Artificial Intelligence and Reasoning, Manizales, Colombia, 4-9th June 2023},
+  series    = {EPiC Series in Computing},
+  volume    = {94},
+  pages     = {11--22},
+  publisher = {EasyChair},
+  year      = {2023},
+  doi       = {10.29007/432M},
+  url       = {https://doi.org/10.29007/432M},
+  venue     = {LPAR 2023},
+  pdf       = {https://hanielbarbosa.com/papers/lpar2023.pdf},
+}
+
+@inproceedings{DBLP:conf/smt/LachnittFA0BNBT23,
+  author    = {Hanna Lachnitt and
+               Mathias Fleury and
+               Leni Aniva and
+               Andrew Reynolds and
+               Haniel Barbosa and
+               Andres Nötzli and
+               Clark W. Barrett and
+               Cesare Tinelli},
+  title     = {Automatic Verification of {SMT} Rewrites in {Isabelle/HOL}},
+  booktitle = {Proceedings of the 21st International Workshop on Satisfiability Modulo Theories (SMT 2023) co-located with the 29th International Conference on Automated Deduction (CADE 2023), Rome, Italy, July, 5-6, 2023},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {3429},
+  pages     = {78},
+  publisher = {CEUR-WS.org},
+  year      = {2023},
+  venue     = {SMT 2023},
+}
+
+@inproceedings{DBLP:conf/tacas/AndreottiLB23,
+  author    = {Bruno Andreotti and
+               Hanna Lachnitt and
+               Haniel Barbosa},
+  title     = {Carcara: An efficient proof checker and elaborator for {SMT} proofs in the Alethe format},
+  booktitle = {Tools and Algorithms for the Construction and Analysis of Systems - 29th International Conference, TACAS 2023, Held as Part of the European Joint Conferences on Theory and Practice of Software, ETAPS 2023, Paris, France, April 22-27, 2023, Proceedings, Part I},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {13993},
+  pages     = {367--386},
+  publisher = {Springer},
+  year      = {2023},
+  doi       = {10.1007/978-3-031-30823-9_19},
+  url       = {https://doi.org/10.1007/978-3-031-30823-9_19},
+  venue     = {TACAS 2023, Springer},
+  pdf       = {https://hanielbarbosa.com/papers/tacas2023.pdf},
+}
+
+@inproceedings{DBLP:conf/scsquare/Barbosa23,
+  author    = {Haniel Barbosa},
+  title     = {Challenges in {SMT} Proof Production and Checking for Arithmetic Reasoning (Invited Paper)},
+  booktitle = {Proceedings of the 8th SC-Square Workshop co-located with the 48th International Symposium on Symbolic and Algebraic Computation, SC-Square@ISSAC 2023, Tromsø, Norway, July 28, 2023},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {3455},
+  pages     = {1--9},
+  publisher = {CEUR-WS.org},
+  year      = {2023},
+  venue     = {SC-Square@ISSAC 2023},
+  pdf       = {https://hanielbarbosa.com/papers/sc2-2023.pdf},
+}
+
+@article{DBLP:journals/cacm/BarbosaBCDKLNNOPRTZ23,
+  author    = {Haniel Barbosa and
+               Clark W. Barrett and
+               Byron Cook and
+               Bruno Dutertre and
+               Gereon Kremer and
+               Hanna Lachnitt and
+               Aina Niemetz and
+               Andres Nötzli and
+               Alex Ozdemir and
+               Mathias Preiner and
+               Andrew Reynolds and
+               Cesare Tinelli and
+               Yoni Zohar},
+  title     = {Generating and Exploiting Automated Reasoning Proof Certificates},
+  journal   = {Commun. ACM},
+  volume    = {66},
+  number    = {10},
+  pages     = {86--95},
+  year      = {2023},
+  month     = {oct},
+  doi       = {10.1145/3587692},
+  url       = {https://cacm.acm.org/article/generating-and-exploiting-automated-reasoning-proof-certificates/},
+  venue     = {Communications of the ACM, 2023},
+}
+
+@article{DBLP:journals/jar/AbateBBDKKPRT23,
+  author    = {Alessandro Abate and
+               Haniel Barbosa and
+               Clark Barrett and
+               Cristina David and
+               Pascal Kesseli and
+               Daniel Kroening and
+               Elizabeth Polgreen and
+               Andrew Reynolds and
+               Cesare Tinelli},
+  title     = {Synthesising Programs with Non-trivial Constants},
+  journal   = {J. Autom. Reason.},
+  volume    = {67},
+  number    = {2},
+  pages     = {19},
+  year      = {2023},
+  month     = {jun},
+  doi       = {10.1007/S10817-023-09664-4},
+  url       = {https://doi.org/10.1007/S10817-023-09664-4},
+  venue     = {Journal of Automated Reasoning, 2023},
+}
+
+@inproceedings{DBLP:conf/tacas/BarbosaBBKLMMMN22,
+  author    = {Haniel Barbosa and
+               Clark Barrett and
+               Martin Brain and
+               Gereon Kremer and
+               Hanna Lachnitt and
+               Makai Mann and
+               Abdalrhman Mohamed and
+               Mudathir Mohamed and
+               Aina Niemetz and
+               Andres Nötzli and
+               Alex Ozdemir and
+               Mathias Preiner and
+               Andrew Reynolds and
+               Ying Sheng and
+               Cesare Tinelli and
+               Yoni Zohar},
+  title     = {{cvc5}: A Versatile and {Industrial-Strength} {SMT} Solver},
+  booktitle = {Tools and Algorithms for the Construction and Analysis of Systems - 28th International Conference, TACAS 2022, Held as Part of the European Joint Conferences on Theory and Practice of Software, ETAPS 2022, Munich, Germany, April 2-7, 2022, Proceedings, Part I},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {13243},
+  pages     = {415--442},
+  publisher = {Springer},
+  year      = {2022},
+  doi       = {10.1007/978-3-030-99524-9_24},
+  url       = {https://doi.org/10.1007/978-3-030-99524-9_24},
+  venue     = {TACAS 2022},
+  pdf       = {https://hanielbarbosa.com/papers/tacas2022.pdf},
+  award     = {Best tool paper award},
+}
+
+@inproceedings{DBLP:conf/cav/NotzliRBBT22,
+  author    = {Andres Nötzli and
+               Andrew Reynolds and
+               Haniel Barbosa and
+               Clark Barrett and
+               Cesare Tinelli},
+  title     = {Even Faster Conflicts and Lazier Reductions for String Solvers},
+  booktitle = {Computer Aided Verification - 34th International Conference, CAV 2022, Haifa, Israel, August 7-10, 2022, Proceedings, Part II},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {13372},
+  pages     = {205--226},
+  publisher = {Springer},
+  year      = {2022},
+  doi       = {10.1007/978-3-031-13188-2_11},
+  url       = {https://doi.org/10.1007/978-3-031-13188-2_11},
+  venue     = {CAV 2022},
+  pdf       = {https://hanielbarbosa.com/papers/cav2022.pdf},
+}
+
+@inproceedings{DBLP:conf/cade/BarbosaRKLNNOPV22,
+  author    = {Haniel Barbosa and
+               Andrew Reynolds and
+               Gereon Kremer and
+               Hanna Lachnitt and
+               Aina Niemetz and
+               Andres Nötzli and
+               Alex Ozdemir and
+               Mathias Preiner and
+               Arjun Viswanathan and
+               Scott Viteri and
+               Yoni Zohar and
+               Cesare Tinelli and
+               Clark Barrett},
+  title     = {Flexible Proof Production in an {Industrial-Strength} {SMT} Solver},
+  booktitle = {Automated Reasoning - 11th International Joint Conference, IJCAR 2022, Haifa, Israel, August 8-10, 2022, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {13385},
+  pages     = {15--35},
+  publisher = {Springer},
+  year      = {2022},
+  doi       = {10.1007/978-3-031-10769-6_3},
+  url       = {https://doi.org/10.1007/978-3-031-10769-6_3},
+  venue     = {IJCAR 2022},
+  pdf       = {https://hanielbarbosa.com/papers/ijcar2022.pdf},
+}
+
+@inproceedings{DBLP:conf/fmcad/NotzliBNPRBT22,
+  author    = {Andres Nötzli and
+               Haniel Barbosa and
+               Aina Niemetz and
+               Mathias Preiner and
+               Andrew Reynolds and
+               Cesare Tinelli and
+               Clark Barrett},
+  title     = {Reconstructing {Fine-Grained} Proofs of Complex Rewrites Using a {Domain-Specific} Language},
+  booktitle = {22nd Formal Methods in Computer-Aided Design, FMCAD 2022, Trento, Italy, October 17-21, 2022},
+  pages     = {65--74},
+  publisher = {IEEE},
+  year      = {2022},
+  doi       = {10.34727/2022/ISBN.978-3-85448-053-2_12},
+  url       = {https://doi.org/10.34727/2022/ISBN.978-3-85448-053-2_12},
+  venue     = {FMCAD 2022},
+  pdf       = {https://hanielbarbosa.com/papers/fmcad2022.pdf},
+}
+
+@inproceedings{DBLP:journals/corr/abs-2107-02354,
+  author    = {Hans-Jörg Schurr and
+               Mathias Fleury and
+               Haniel Barbosa and
+               Pascal Fontaine},
+  title     = {Alethe: Towards a Generic {SMT} Proof Format},
+  booktitle = {Proceedings Seventh Workshop on Proof eXchange for Theorem Proving, PxTP 2021, Pittsburg, PA, USA, July 11, 2021},
+  series    = {EPTCS},
+  volume    = {336},
+  pages     = {49--54},
+  year      = {2021},
+  doi       = {10.4204/EPTCS.336.6},
+  url       = {https://doi.org/10.4204/EPTCS.336.6},
+  venue     = {PxTP 2021},
+  pdf       = {https://hanielbarbosa.com/papers/pxtp2021.pdf},
+  preprint  = {https://arxiv.org/abs/2107.02354v1},
+}
+
+@inproceedings{DBLP:conf/fmcad/JanotaBFR21,
+  author    = {Mikoláš Janota and
+               Haniel Barbosa and
+               Pascal Fontaine and
+               Andrew Reynolds},
+  title     = {Fair and Adventurous Enumeration of Quantifier Instantiations},
+  booktitle = {Formal Methods in Computer Aided Design, FMCAD 2021, New Haven, CT, USA, October 19-22, 2021},
+  pages     = {256--260},
+  publisher = {IEEE},
+  year      = {2021},
+  doi       = {10.34727/2021/ISBN.978-3-85448-046-4_35},
+  url       = {https://doi.org/10.34727/2021/ISBN.978-3-85448-046-4_35},
+  venue     = {FMCAD 2021},
+  pdf       = {https://hanielbarbosa.com/papers/enum-strategies.pdf},
+}
+
+@article{DBLP:journals/vlc/SaffranBPV21,
+  author    = {João Saffran and
+               Haniel Barbosa and
+               Fernando Magno Quintão Pereira and
+               Srinivas Vadlamani},
+  title     = {{On-Line} Synthesis of Parsers for String Events},
+  journal   = {J. Comput. Lang.},
+  volume    = {62},
+  pages     = {101022},
+  year      = {2021},
+  doi       = {10.1016/J.COLA.2021.101022},
+  url       = {https://doi.org/10.1016/J.COLA.2021.101022},
+  venue     = {Journal of Computer Languages, 2021},
+  pdf       = {https://hanielbarbosa.com/papers/cola2021.pdf},
+}
+
+@inproceedings{DBLP:conf/smt/TourretFOB20,
+  author    = {Sophie Tourret and
+               Pascal Fontaine and
+               Daniel El Ouraoui and
+               Haniel Barbosa},
+  title     = {Lifting congruence closure with free variables to lambda-free higher-order logic via {SAT} encoding (work in progress)},
+  booktitle = {Proceedings of the 18th International Workshop on Satisfiability Modulo Theories co-located with the 10th International Joint Conference on Automated Reasoning (IJCAR 2020), Online (initially located in Paris, France), July 5-6, 2020},
+  series    = {CEUR Workshop Proceedings},
+  volume    = {2854},
+  pages     = {3--14},
+  publisher = {CEUR-WS.org},
+  year      = {2020},
+  venue     = {SMT@IJCAR 2020},
+  pdf       = {https://hanielbarbosa.com/papers/smt2020.pdf},
+}
+
+@inproceedings{DBLP:conf/cade/ReynoldsBLT20,
+  author    = {Andrew Reynolds and
+               Haniel Barbosa and
+               Daniel Larraz and
+               Cesare Tinelli},
+  title     = {Scalable Algorithms for Abduction via Enumerative {Syntax-Guided} Synthesis},
+  booktitle = {Automated Reasoning - 10th International Joint Conference, IJCAR 2020, Paris, France, July 1-4, 2020, Proceedings, Part I},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {12166},
+  pages     = {141--160},
+  publisher = {Springer},
+  year      = {2020},
+  doi       = {10.1007/978-3-030-51074-9_9},
+  url       = {https://doi.org/10.1007/978-3-030-51074-9_9},
+  venue     = {IJCAR 2020},
+  pdf       = {https://hanielbarbosa.com/papers/ijcar2020.pdf},
+}
+
+@article{DBLP:journals/jar/BarbosaBFF20,
+  author    = {Haniel Barbosa and
+               Jasmin Christian Blanchette and
+               Mathias Fleury and
+               Pascal Fontaine},
+  title     = {Scalable fine-grained proofs for formula processing},
+  journal   = {J. Autom. Reason.},
+  volume    = {64},
+  number    = {3},
+  pages     = {485--510},
+  year      = {2020},
+  doi       = {10.1007/S10817-018-09502-Y},
+  url       = {https://doi.org/10.1007/S10817-018-09502-Y},
+  venue     = {Journal of Automated Reasoning, 2020},
+  pdf       = {http://matryoshka.gforge.inria.fr/pubs/processing_article.pdf},
+}
+
+% Hand-made entry (not in DBLP yet); replace with the DBLP entry when it appears.
+@inproceedings{SMITE:sbseg/SaffranPB20,
+  author    = {João Saffran and
+               Fernando Magno Quintão Pereira and
+               Haniel Barbosa},
+  title     = {Sintetizador de Gramáticas para Obfuscação de Dados em Sistemas de Logs},
+  booktitle = {Anais Estendidos do {XX} Simpósio Brasileiro em Segurança da Informação e de Sistemas Computacionais ({SBSeg} 2020), Salão de Ferramentas},
+  publisher = {Sociedade Brasileira de Computação},
+  year      = {2020},
+  venue     = {SBSeg 2020},
+  pdf       = {https://hanielbarbosa.com/papers/sbseg2020.pdf},
+}

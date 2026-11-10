@@ -1,0 +1,41 @@
+{{- /* Publications, from data/publications.json (generated from bib/publications.bib by scripts/bib2json.py). */ -}}
+{{- $pubs := site.Data.publications -}}
+{{- $years := slice -}}
+{{- range $pubs }}{{ $years = $years | append .year }}{{ end -}}
+<div class="publications">
+  {{ range sort ($years | uniq) "value" "desc" }}
+    {{ $year := . }}
+    <div class="pub-row">
+
+      <div class="pub-year">
+        {{ $year }}
+      </div>
+
+      <div class="pub-content">
+        <ul>
+          {{ range where $pubs "year" $year }}
+            <li>
+              <strong>{{ .title }}</strong><br>
+              {{ delimit .authors ", " " and " }}{{ if .editors }} (eds.){{ end }}<br>
+              <em>{{ .venue }}</em>
+              {{- with .award }} <span class="pub-award">🏆 {{ . }}</span>{{ end }}
+              <div class="pub-links">
+                {{- with .doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end -}}
+                {{- with .url }}{{ if not (hasPrefix . "https://doi.org/") }}<a href="{{ . }}" target="_blank" rel="noopener">Link</a>{{ end }}{{ end -}}
+                {{- with .pdf }}<a href="{{ . | relURL }}" target="_blank" rel="noopener">PDF</a>{{ end -}}
+                {{- with .preprint }}<a href="{{ . }}" target="_blank" rel="noopener">Preprint</a>{{ end -}}
+                {{- with .slides }}<a href="{{ . | relURL }}" target="_blank" rel="noopener">Slides</a>{{ end -}}
+                {{- with .artifact }}<a href="{{ . }}" target="_blank" rel="noopener">Artifact</a>{{ end -}}
+                <details class="pub-bibtex">
+                  <summary>BibTeX</summary>
+                  <pre>{{ .bibtex }}</pre>
+                </details>
+              </div>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+
+    </div>
+  {{ end }}
+</div>

@@ -1,0 +1,12 @@
+# Hugo build output and lock file (the site is built by the GitHub Action)
+public/
+.hugo_build.lock
+
+# Personal notes
+notes.txt
+
+# Python cache
+__pycache__/
+
+# Helper scripts tested locally before being committed
+scripts/local/

@@ -1,0 +1,247 @@
+# SMITE group seminars, shown in the Seminars section by layouts/shortcodes/seminars.html.
+# Source: announcements in the "seminários" Zulip channel, newest first.
+#
+# Fields: date,
+#   talks:  speaker, url (speaker's page, for visitors), and either title (talk title)
+#           or topic (description when no title was announced); note, link (paper/work),
+#           slides (link to the file in the group's shared Google Drive folder)
+#   papers: the paper(s) discussed: title, authors, venue, url, slides (of the discussion)
+# Slide files in the shared folder are named Speaker-DD-MM-YYYY.pdf.
+
+- date: 2026-11-06
+  talks:
+    - speaker: Haniel Barbosa
+      title: A General Approach for SMT Proof Skeletons
+      note: IJCAR 2026
+      link: https://hanielbarbosa.com/papers/2026ijcar-skeletons.pdf
+    - speaker: Robin Coutelier
+      url: https://robcoutel.github.io/
+      topic: His past work on SAT-based subsumption resolution
+      note: CADE 2023
+      link: https://robcoutel.github.io/publications/2023%20-%20SAT-Based%20Subsumption%20Resolution.pdf
+      slides: https://drive.google.com/file/d/1Wp7JFaqJxi2UUK7qBmJprKNtxjNC5BcJ/view
+  papers:
+    - title: "PICID: Proof-Driven Clause Learning in Neural Network Verification"
+      authors: Omri Isac, Idan Refaeli, Haoze Wu, Clark Barrett, Guy Katz
+      venue: FMCAD 2026
+      url: https://repositum.tuwien.at/handle/20.500.12708/230561
+      slides: https://drive.google.com/file/d/1Qdb5WKi-teCN4xJGGcoKSseiCUKI8ncU/view  # David Perera (discussion)
+
+- date: 2026-10-23
+  talks:
+    - speaker: Tomaz Mascarenhas
+      topic: Ongoing work on proofs for the Cylindrical Algebraic Decomposition/Coverings procedures
+      slides: https://drive.google.com/file/d/1HC-hl_MFfuDNdpxxZ3mEw4WC8d4hfzjs/view
+    - speaker: Augusto Guerra de Lima
+      topic: A sums-of-squares approach for solving non-linear problems
+  papers:
+    - title: Bit-Precise Interpolation in Bitwuzla
+      authors: Aina Niemetz, Mathias Preiner
+      venue: TACAS 2026
+      url: https://cs.stanford.edu/~preiner/publications/2026/NiemetzP-TACAS26.pdf
+
+- date: 2026-10-09
+  talks:
+    - speaker: Pedro Saccomani and Vinícius Magri
+      topic: Ongoing work on bit-vector problems solving
+      slides: https://drive.google.com/file/d/1oozL4vJf6E373YlVEUiCeU6XgtMSCRtn/view
+  papers:
+    - title: Arithmetic Solving in Z3
+      authors: Nikolaj Bjørner, Lev Nachmanson
+      venue: CAV 2024
+      url: https://link.springer.com/chapter/10.1007/978-3-031-65627-9_2
+    - title: SPASS-SATT, A CDCL(LA) Solver
+      authors: Martin Bromberger, Mathias Fleury, Simon Schwarz, Christoph Weidenbach
+      venue: CADE-27
+      url: https://inria.hal.science/hal-02405524/document
+
+- date: 2026-09-25
+  talks:
+    - speaker: Eduardo Sandalo Porto
+      title: "Foundations for Formally Verified Network Protocol Parsers in Lean 4: A Case Study with MQTT"
+      note: SBLP 2026
+      link: https://sandalo.dev/publications/lean-mqtt/
+  papers:
+    - title: Improving Stability of SMT Solvers via Context-Driven Normalization
+      authors: Xiang Zhang, Mengyu Zhao, Shaohuang Chen, Jian Zhang, Shaowei Cai
+      venue: CAV 2026
+      url: https://link.springer.com/chapter/10.1007/978-3-032-32526-6_1
+
+- date: 2026-09-11
+  talks:
+    - speaker: Pedro Saccomani
+      title: Proof Production for Satisfiability Modulo Finite Fields with Proof Checking in Pacheck and Lean
+      note: FMCAD 2026, talk rehearsal
+      link: https://psaccomani15.github.io/papers/saccomani2026-smt-finite-fields.pdf
+      slides: https://drive.google.com/file/d/14p2yIXS8WLJa2T2bstJb_oAt9L0vhOSi/view
+    - speaker: Robin Coutelier
+      url: https://robcoutel.github.io/
+      topic: Chronological backtracking and his recent work on graph backtracking
+      link: https://robcoutel.github.io/publications/2026%20-%20Generalizing_CDCL_with_Graph_Backtracking.pdf
+  papers:
+    - title: Satisfiability Modulo Extensional Constant Arrays
+      authors: Mathias Preiner, Aina Niemetz, Clark Barrett
+      venue: CAV 2026
+      url: https://link.springer.com/chapter/10.1007/978-3-032-32526-6_2
+
+- date: 2026-08-28
+  talks:
+    - speaker: Tiago Campos
+      title: "IsaAbduct: A Multi-Strategy Abduction Pipeline for Isabelle/HOL"
+      note: FMCAD 2026
+      link: https://hanielbarbosa.com/papers/2026fmcad-isaabduct.pdf
+    - speaker: Arjun Viswanathan
+      url: https://cs.union.edu/~viswanaa/
+      title: Verification of Invertibility Conditions in Rocq
+  papers:
+    - title: Simplify, Order, Break, Repeat
+      authors: Markus Anders, Cayden Codel, Marijn J. H. Heule
+      venue: SAT 2026
+      url: https://drops.dagstuhl.de/storage/00lipics/lipics-vol377-sat2026/LIPIcs.SAT.2026.4/LIPIcs.SAT.2026.4.pdf
+
+- date: 2026-06-26
+  talks:
+    - speaker: Mallku Soldevila
+      topic: Updates on the mechanization of the Alethe standard in the Eunoia language
+  papers:
+    - title: Towards SMT Solver Stability via Input Normalization
+      authors: Daneshvar Amrollahi et al.
+      venue: FMCAD 2025
+      url: https://cs.stanford.edu/~niemetz/publications/2025/AmrollahiPNRCTB-FMCAD25.pdf
+
+- date: 2026-06-12
+  talks:
+    - speaker: David Perera
+      title: Key lemma extraction from SMT proof skeletons
+  papers:
+    - title: "130k Lines of Formal Topology in Two Weeks: Simple and Cheap Autoformalization for Everyone?"
+      authors: Josef Urban
+      venue: ITP 2026
+      url: https://arxiv.org/abs/2601.03298
+
+- date: 2026-05-08
+  talks:
+    - speaker: Tomaz Mascarenhas
+      title: Reconstructing Proofs from Univariate Cylindrical Algebraic Decomposition in Lean
+      note: status update, joint work with Sarah Pereira and Pedro Saccomani
+  papers:
+    - title: "Cpp2Rust: Automatic Translation of C++ to Safe Rust"
+      authors: L. Popescu et al.
+      venue: PLDI 2026
+      url: https://web.ist.utl.pt/nuno.lopes/pubs/cpp2rust-pldi26.pdf
+
+- date: 2026-04-24
+  talks:
+    - speaker: Haniel Barbosa
+      title: Hint-Based SMT Proof Reconstruction
+      note: TACAS 2026
+  papers:
+    - title: Orbitopal Fixing in SAT
+      authors: M. Anders et al.
+      venue: TACAS 2026
+      url: https://arxiv.org/abs/2601.16855
+
+- date: 2026-04-10
+  talks:
+    - speaker: Augusto Mafra
+      title: Formal Verification of Mixed-Signal Systems Using Real Number Modeling on an SMT-Based Model Checker
+      note: MSc work
+  papers:
+    - title: The Power of Regular Constraint Propagation
+      authors: M. Hague et al.
+      venue: OOPSLA 2025
+      url: https://dl.acm.org/doi/epdf/10.1145/3763165
+
+- date: 2026-03-20
+  talks:
+    - speaker: Tiago Campos
+      title: Reconstructing computational rewrite rules in Rare
+  papers:
+    - title: Canonical for Automated Theorem Proving in Lean
+      authors: Chase Norman, Jeremy Avigad
+      venue: ITP 2025
+      url: https://drops.dagstuhl.de/storage/00lipics/lipics-vol352-itp2025/LIPIcs.ITP.2025.14/LIPIcs.ITP.2025.14.pdf
+
+- date: 2025-12-05
+  talks:
+    - speaker: Bruno Andreotti
+      title: Shorter Congruence Closure Proofs in cvc5
+  papers:
+    - title: Checking Linear Integer Arithmetic Proofs in Lambdapi
+      authors: Alessio Coltellacci, Stephan Merz
+      venue: FroCoS 2025
+      url: https://link.springer.com/chapter/10.1007/978-3-032-04167-8_20
+
+- date: 2025-11-14
+  talks:
+    - speaker: Ciarán Dunne
+      topic: Compiling formal systems written in the Eunoia logical framework into Lambdapi
+  papers:
+    - title: Validating SMT Rewriters via Rewrite Space Exploration Supported by Generative Equality Saturation
+      authors: Maolin Sun et al.
+      venue: OOPSLA 2025
+      url: https://dl.acm.org/doi/10.1145/3763093
+
+- date: 2025-10-31
+  talks:
+    - speaker: Pedro Saccomani
+      title: On Producing Proof for Finite Fields
+      note: FMCAD 2025 poster
+  papers:
+    - title: Interactive Bit Vector Reasoning using Verified Bitblasting
+      authors: Henrik Böving et al.
+      venue: OOPSLA 2025
+      url: https://dl.acm.org/doi/10.1145/3763167
+
+- date: 2025-10-17
+  talks:
+    - speaker: Tomaz Mascarenhas and Sarah Pereira
+      title: Proofs for Cylindrical Algebraic Decomposition
+      note: joint work with Pedro Saccomani
+  papers:
+    - title: Regex Decision Procedures in Extended RE
+      authors: Ian Erik Varatalu, Margus Veanes, Ekaterina Zhuchko, Juhan P. Ernits
+      venue: CAV 2025
+      url: https://link.springer.com/chapter/10.1007/978-3-031-98682-6_7
+
+- date: 2025-09-12
+  talks:
+    - speaker: Vinicius Gomes
+      title: Formalizing String theory in the Alethe proof format and verifying with Carcara
+  papers:
+    - title: Revisiting DRUP-based Interpolants with CaDiCaL 2.0
+      authors: Basel Khouri, Yakir Vizel
+      venue: TACAS 2025
+      url: https://link.springer.com/chapter/10.1007/978-3-031-90653-4_5
+
+- date: 2025-08-29
+  talks:
+    - speaker: Mallku Soldevila
+      title: "\"Saudade\": memories of my first year working in the SMITE group"
+  papers:
+    - title: Lazy Reimplication in Chronological Backtracking
+      authors: Robin Coutelier, Mathias Fleury, Laura Kovács
+      venue: SAT 2024
+      url: https://robcoutel.github.io/publications/Lazy_Reimplication_in_Chronological_Backtracking.pdf
+
+- date: 2025-06-02
+  talks:
+    - speaker: Mallku Soldevila
+      title: Neuroscience for problem-solving and learning
+      note: based on the course "Learning How to Learn"
+      link: https://www.coursera.org/learn/learning-how-to-learn/
+  papers:
+    - title: "HornStr: Invariant Synthesis for Regular Model Checking as Constrained Horn Clauses"
+      authors: Hongjian Jiang, Anthony W. Lin, Oliver Markgraf, Philipp Rümmer, Daniel Stan
+      venue: CAV 2025
+      url: https://arxiv.org/pdf/2505.15959
+
+- date: 2025-05-19
+  talks:
+    - speaker: David Perera
+      title: Ambiguity and Invariance In Machine Listening
+  papers:
+    - title: "Veil: A Framework for Automated and Interactive Verification of Transition Systems"
+      authors: George Pîrlea, Vladimir Gladshtein, Elad Kinsbruner, Qiyuan Zhao, Ilya Sergey
+      venue: CAV 2025
+      url: https://verse-lab.github.io/papers/veil-cav25.pdf

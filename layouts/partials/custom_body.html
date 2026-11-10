@@ -1,0 +1,69 @@
+{{- /* Included at the end of <body> by layouts/baseof.html. */ -}}
+<script>
+  /* Light frame around the seminar / publication under the pointer (see .is-active in
+     static/css/custom.css). Done here rather than with CSS :hover because browsers do not
+     update :hover while the page scrolls, which made the frame lag behind.
+     Cost: at most one elementFromPoint() per animation frame, on mouse moves and scrolling;
+     the listeners are passive, so scrolling is never delayed. */
+  (function () {
+    var SELECTOR = ".seminar-row, .pub-content li";
+    var x = -1, y = -1, current = null, pending = false;
+    document.documentElement.classList.add("hover-js");  // disables the CSS :hover fallback
+    function update() {
+      pending = false;
+      var el = x < 0 ? null : document.elementFromPoint(x, y);
+      var item = el && el.closest ? el.closest(SELECTOR) : null;
+      if (item === current) return;
+      if (current) current.classList.remove("is-active");
+      if (item) item.classList.add("is-active");
+      current = item;
+    }
+    function schedule() {
+      if (!pending) { pending = true; requestAnimationFrame(update); }
+    }
+    document.addEventListener("mousemove", function (e) { x = e.clientX; y = e.clientY; schedule(); }, { passive: true });
+    document.addEventListener("mouseleave", function () { x = -1; schedule(); });
+    window.addEventListener("scroll", schedule, { passive: true });
+  })();
+
+  /* Top menu on one line: the links that do not fit are moved, from the right, into the
+     ☰ dropdown (layouts/partials/nav.html). Recomputed when the window is resized. */
+  (function () {
+    var nav = document.querySelector("body > header nav");
+    var links = nav && nav.querySelector(".nav-links");
+    var more = nav && nav.querySelector(".nav-more");
+    if (!links || !more) return;
+    var button = more.querySelector(".nav-more-button");
+    var menu = more.querySelector(".nav-more-menu");
+    var all = Array.prototype.slice.call(links.children);
+    document.documentElement.classList.add("nav-js");  // one-line layout (see custom.css)
+
+    function close() {
+      menu.classList.remove("open");
+      button.setAttribute("aria-expanded", "false");
+    }
+    function overflows() { return links.scrollWidth > links.clientWidth + 1; }
+    function layout() {
+      close();
+      all.forEach(function (a) { links.appendChild(a); });  // start from the full menu
+      more.hidden = true;
+      if (!overflows()) return;
+      more.hidden = false;
+      while (links.children.length > 1 && overflows()) {
+        menu.insertBefore(links.lastElementChild, menu.firstChild);
+      }
+    }
+
+    button.addEventListener("click", function (e) {
+      e.stopPropagation();
+      button.setAttribute("aria-expanded", menu.classList.toggle("open") ? "true" : "false");
+    });
+    menu.addEventListener("click", function (e) { if (e.target.closest("a")) close(); });
+    document.addEventListener("click", function (e) { if (!more.contains(e.target)) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    var timer;
+    window.addEventListener("resize", function () { clearTimeout(timer); timer = setTimeout(layout, 50); });
+    layout();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+  })();
+</script>

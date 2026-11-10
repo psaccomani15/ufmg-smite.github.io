@@ -1,0 +1,19 @@
+<div class="news">
+  {{ range sort site.Data.news "date" "desc" }}
+    <div class="news-row">
+
+      <div class="news-date">
+        {{ .date }}
+      </div>
+
+      <div class="news-content">
+        <ul>
+          {{ range .items }}
+            <li>{{ .text | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </div>
+
+    </div>
+  {{ end }}
+</div>

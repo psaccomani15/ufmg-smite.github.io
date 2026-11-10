@@ -1,0 +1,76 @@
+- date: "2026-09"
+  items:
+    - text: "Our paper *The Past, Present, and Future of Formal Methods in Brazil* has been accepted for publication at the *Formal Aspects of Computing* journal."
+    - text: "Robin Coutelier (TU Wien) is visiting SMITE for three months."
+
+- date: "2026-08"
+  items:
+    - text: "Tiago Campos has successfully defended his MSc thesis. Congratulations, Tiago!"
+
+- date: "2026-07"
+  items:
+    - text: "Augusto Mafra has successfully defended his MSc thesis. Congratulations, Augusto!"
+
+- date: "2026-05"
+  items:
+    - text: "Our paper *IsaAbduct: A Multi-Strategy Abduction Pipeline for Isabelle/HOL* has been accepted at FMCAD'26."
+    - text: "Our paper *Proof Production for Satisfiability Modulo Finite Fields with Proof Checking in Pacheck and Lean* has been accepted at FMCAD'26."
+    - text: "Our short paper *Formal Verification of Mixed-Signal Systems Using Real Number Modeling with SMT-based Model Checking* has been accepted at FMCAD'26."
+
+- date: "2026-04"
+  items:
+    - text: "The CVC4/cvc5 tool has received the [Rance Cleaveland Test-of-Time Tool Award](https://etaps.org/awards/test-of-time-tool/) by the ETAPS association!"
+    - text: "Our paper *The Cooperating Proof Calculus: Comprehensive Proofs for an SMT Solver* has been accepted at CAV'26."
+    - text: "Our paper *Ethos: A Fast Proof Checker for the Eunoia Logical Framework* has been accepted at IJCAR'26."
+    - text: "Our paper *A General Approach for SMT Proof Skeletons* has been accepted at IJCAR'26."
+
+- date: "2026-02"
+  items:
+    - text: "The extended version of the paper *Carcara: An efficient proof checker and elaborator for SMT proofs in the Alethe format* has been accepted to the STTT special issue on selected papers from TACAS'23."
+
+- date: "2025-12"
+  items:
+    - text: "Our paper *Hint-Based SMT Proof Reconstruction* has been accepted at TACAS'26."
+
+- date: "2025-11"
+  items:
+    - text: "Our paper *Reconstruction of SMT proofs with Lambdapi* has been accepted for publication at the *Acta Informatica* journal."
+    - text: "Our paper *Formalization of a Proof Calculus for Incremental Linearization for Satisfiability Modulo Nonlinear Arithmetic and Transcendental Functions* has been accepted at CPP'26."
+    - text: "Our paper *Producing Shorter Congruence Closure Proofs in a State-of-the-Art SMT Solver* has been accepted at VMCAI'26."
+
+- date: "2025-05"
+  items:
+    - text: "Our paper on the reconstruction of cvc5 Alethe proofs in Isabelle/HOL has been accepted at ITP'25."
+
+- date: "2025-04"
+  items:
+    - text: "Our paper on the Lean-SMT project has been accepted at CAV'25."
+
+- date: "2024-05"
+  items:
+    - text: "The paper *Towards Producing Shorter Congruence Closure Proofs in a State-of-the-art SMT Solver* will appear at the PAAR 2024 workshop."
+    - text: "The paper *Satisfiability Modulo Theories: A Beginner's Tutorial* will appear at FM'24."
+
+- date: "2024-04"
+  items:
+    - text: "Kick-off of the DARPA-funded project: *PEGISUS - Proof EnGineering and Integration with Satisfiability modUlo theorieS*."
+
+- date: "2024-01"
+  items:
+    - text: "The paper on IsaRare will appear at TACAS'24."
+
+- date: "2023-10"
+  items:
+    - text: "Our article *Generating and Exploiting Automated Reasoning Proof Certificates* was published in the *Communications of the ACM*."
+
+- date: "2023-09"
+  items:
+    - text: "Tomaz Mascarenhas has successfully defended his MSc thesis. Congratulations, Tomaz!"
+
+- date: "2023-04"
+  items:
+    - text: "The paper *An Interactive SMT Tactic in Coq using Abductive Reasoning* will appear at LPAR'23."
+
+- date: "2023-01"
+  items:
+    - text: "The paper on Carcara will appear at TACAS'23."

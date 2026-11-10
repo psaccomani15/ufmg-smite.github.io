@@ -1,0 +1,151 @@
+# Team members, shown in the Team section by layouts/shortcodes/team.html.
+# Source: https://hanielbarbosa.com/#team (last synced 2026-11-06).
+#
+# Fields (all optional except name):
+#   name, role, url (personal page, opened when clicking the photo),
+#   image (path under static/; falls back to img/team/default.jpg if the file is missing),
+#   since / until (shown for past members), description (not displayed for now),
+#   bibtex (DBLP publication list: https://dblp.org/pid/<dblp id>.bib).
+
+# Group photo shown at the top of the Team section (remove this block to hide it).
+group_photo:
+  image: img/team/team_2026.jpg
+  caption: The SMITE team in 2026.
+
+current:
+  - name: Haniel Barbosa
+    role: Tenured Assistant Professor
+    url: https://hanielbarbosa.com/
+    image: img/team/haniel_barbosa.jpg
+    bibtex: https://dblp.org/pid/116/5052.bib
+    description: Works on making SMT solvers more trustworthy via the production and checking of proof certificates.
+
+  - name: David Perera
+    role: Post-doctoral scholar
+    since: May 2025
+    url: https://daperera.github.io/
+    image: img/team/david_perera.jpg
+    bibtex: https://dblp.org/pid/334/1626.bib
+    description: Works on SMT solving and machine learning.
+
+  - name: Tomaz Mascarenhas
+    role: PhD student
+    since: Mar 2025
+    url: https://tomaz1502.github.io/
+    image: img/team/tomaz_mascarenhas.jpg
+    bibtex: https://dblp.org/pid/408/1711.bib
+    description: Works on proof logging and reconstruction for cylindrical algebraic decomposition.
+
+  - name: Pedro Saccomani
+    role: PhD student
+    since: Mar 2025
+    url: https://psaccomani15.github.io/
+    image: img/team/pedro_saccomani.jpg
+    bibtex: https://dblp.org/pid/444/6946.bib
+    description: Works on finite fields proofs.
+
+  - name: Tiago Campos
+    role: PhD student
+    url: https://github.com/caotic123
+    since: Aug 2026
+    image: img/team/tiago_campos.jpg
+    description: Works on proof checking and elaboration for rewriting.
+
+  - name: Caio Raposo
+    role: PhD student
+    url: https://caioraposo.xyz/
+    since: Oct 2024
+    image: img/team/caio_raposo.jpg
+    bibtex: https://dblp.org/pid/391/2620.bib
+    description: Works on SMT solving and formal methods.
+
+  - name: Eduardo Sandalo Porto
+    role: MSc student
+    since: Mar 2026
+    url: https://sandalo.dev/
+    image: img/team/eduardo_sandalo_porto.jpg
+    bibtex: https://dblp.org/pid/440/3774.bib
+
+  - name: Vinicius Gomes
+    role: MSc student
+    since: Aug 2026
+    url: https://vinisilvag.github.io/
+    image: img/team/vinicius_gomes.jpg
+
+  - name: Andresa Almeida da Silva
+    role: MSc student
+    since: Aug 2026
+    image: img/team/andresa_almeida_da_silva.jpg
+
+  - name: José Neto
+    role: Research Engineer
+    url: https://netolcc06.github.io/
+    since: Jan 2024
+    image: img/team/jose_neto.jpg
+
+  - name: Bruno Andreotti
+    role: Research Engineer
+    since: Jun 2026
+    url: https://bandreotti.com/
+    image: img/team/bruno_andreotti.jpg
+    bibtex: https://dblp.org/pid/135/4292.bib
+    description: Works on small congruence closure proofs, proof checking, and proof elaboration.
+
+  - name: Augusto Guerra de Lima
+    role: Undergraduate researcher
+    url: https://homepages.dcc.ufmg.br/~augustoguerra/
+    image: img/team/augusto_guerra_de_lima.jpg
+
+  - name: Izabela Fonseca
+    role: Undergraduate researcher
+    url: https://github.com/Izaazz
+    image: img/team/izabela_fonseca.jpg
+
+  - name: Lara Amélia
+    role: Undergraduate researcher
+    url: https://github.com/Lara-Amelia
+    image: img/team/lara_amelia.jpg
+
+  - name: Mariana Ordones
+    role: Undergraduate researcher
+    url: https://github.com/marianaordones
+    image: img/team/mariana_ordones.jpg
+
+  - name: Vinícius Magri
+    role: Undergraduate researcher
+    url: https://github.com/ViniciusMagri
+    image: img/team/vinicius_magri.jpg
+
+
+past:
+  - name: Mallku Soldevila
+    role: Post-doctoral scholar
+    since: Aug 2024
+    until: Aug 2026
+    url: https://mallku2.github.io/
+    image: img/team/mallku_soldevila.jpg
+    bibtex: https://dblp.org/pid/202/2338.bib
+
+  - name: Augusto Mafra
+    role: MSc student
+    url: https://github.com/augustomafra
+    since: Aug 2023
+    until: Jul 2026
+    image: img/team/augusto_mafra.jpg
+    bibtex: https://dblp.org/pid/279/4626.bib
+    description: Real number modeling in SMT-based model checkers.
+
+  # Listed as an undergraduate researcher on this site before; not on hanielbarbosa.com (dates unknown).
+  - name: Sarah Pereira
+    role: Undergraduate researcher
+    url: https://github.com/sarahazp
+    image: img/team/sarah_pereira.jpg
+
+  - name: João Saffran
+    role: MSc student
+    url: https://github.com/joaosaffran
+    since: Mar 2019
+    until: Mar 2021
+    image: img/team/joao_saffran.jpg
+    bibtex: https://dblp.org/pid/200/5309.bib
+    description: "Log obfuscation (co-supervisor: Fernando Magno Quintão Pereira)."

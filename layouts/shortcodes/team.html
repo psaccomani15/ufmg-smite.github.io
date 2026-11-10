@@ -1,0 +1,18 @@
+{{ with site.Data.team.group_photo }}
+<figure class="team-photo">
+  <img src="{{ .image | relURL }}" alt="{{ .caption | default "SMITE team" }}" loading="lazy">
+  {{ with .caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+{{ end }}
+
+<h3 id="current-members">Current members</h3>
+<div class="team-grid">
+  {{ range site.Data.team.current }}{{ partial "team-member.html" . }}{{ end }}
+</div>
+
+{{ with site.Data.team.past }}
+<h3 id="past-members">Past members</h3>
+<div class="team-grid">
+  {{ range . }}{{ partial "team-member.html" . }}{{ end }}
+</div>
+{{ end }}
