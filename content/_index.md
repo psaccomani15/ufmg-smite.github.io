@@ -51,8 +51,6 @@ methods, SMT solving, and automated reasoning.
   internships.
 - **Collaborators**: We are open to academic and industrial collaborations.
 
-To get in touch, contact [Prof. Haniel Barbosa](https://hanielbarbosa.com/).
-
 ## Location {#location}
 
 Departamento de Ciência da Computação (DCC)  
