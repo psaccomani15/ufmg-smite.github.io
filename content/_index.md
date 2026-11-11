@@ -11,8 +11,18 @@ title: "Home"
 
 ## About {#about}
 
-SMITE (SMT-based Methods and Interactive Theorem Proving Environment) is a research group at the Department of Computer Science of UFMG (DCC/UFMG). The group focuses on formal methods, software verification, and SMT solving, with an emphasis on automated reasoning, proof systems, and scalable verification techniques. SMITE develops tools and techniques for SMT-based reasoning, including projects such as Carcara, an efficient proof checker and elaborator for SMT solvers. Led by Prof. Haniel Barbosa, the group is actively involved in research on program verification, hardware verification, and the synthesis and certification of software systems.
+We are SMITE (SMT-based Methods and Interactive Theorem Proving Environment), a
+research group at the Department of Computer Science of UFMG (DCC/UFMG). We
+work on formal methods, software verification, and SMT solving, with an
+emphasis on automated reasoning, proof systems, and scalable verification
+techniques.
 
+We develop tools and techniques for SMT-based reasoning, including
+[Carcara](https://github.com/ufmg-smite/carcara), an efficient proof checker
+and elaborator for SMT proofs. Our group is led by
+[Prof. Haniel Barbosa](https://hanielbarbosa.com/), and our research spans
+program verification, hardware verification, and the synthesis and
+certification of software systems.
 
 ## News {#news}
 
@@ -32,11 +42,16 @@ SMITE (SMT-based Methods and Interactive Theorem Proving Environment) is a resea
 
 ## Join {#join}
 
-We are always interested in working with motivated students and collaborators in formal methods, SMT solving, and automated reasoning.
+We are always happy to work with motivated students and collaborators in formal
+methods, SMT solving, and automated reasoning.
 
-- **Graduate students (PhD / MSc)**: Topics include SMT solving, proof systems, and formal verification.
-- **Undergraduate students**: Opportunities for research projects and internships.
-- **Collaborators**: We welcome academic and industrial collaborations.
+- **Graduate students (PhD / MSc)**: We welcome students interested in SMT
+  solving, proof systems, and formal verification.
+- **Undergraduate students**: We have opportunities for research projects and
+  internships.
+- **Collaborators**: We are open to academic and industrial collaborations.
+
+To get in touch, contact [Prof. Haniel Barbosa](https://hanielbarbosa.com/).
 
 ## Location {#location}
 
