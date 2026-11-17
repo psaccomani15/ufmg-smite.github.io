@@ -69,29 +69,44 @@
 
   /* Marks the menu entry of the section in view (aria-current="true", styled by the theme
      and by custom.css). The section in view is the last one whose heading has passed under
-     the fixed header; "About" (#top) stands for the first section. */
+     the fixed header; "About" (#top) stands for the first section.
+     A click on an entry marks it at once and holds it until the smooth scroll (simple.css)
+     stops, instead of waiting for the scroll to reach the section. */
   (function () {
     var links = Array.prototype.slice.call(document.querySelectorAll("body > header nav a[href^='#']"));
     var heads = Array.prototype.slice.call(document.querySelectorAll("main h2[id]"));
     if (!links.length || !heads.length) return;
-    var pending = false;
+    var pending = false, locked = null, unlockTimer;
+    function targetOf(a) {
+      var target = a.getAttribute("href").slice(1);
+      return target === "top" ? heads[0].id : target;
+    }
+    function mark(id) {
+      links.forEach(function (a) {
+        if (targetOf(a) === id) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      });
+    }
     function update() {
       pending = false;
+      if (locked) return mark(locked);
       var id = heads[0].id;
       heads.forEach(function (h) { if (h.getBoundingClientRect().top <= 150) id = h.id; });
       var doc = document.documentElement;
       if (window.innerHeight + window.scrollY >= doc.scrollHeight - 2) id = heads[heads.length - 1].id;
-      links.forEach(function (a) {
-        var target = a.getAttribute("href").slice(1);
-        if (target === "top") target = heads[0].id;
-        if (target === id) a.setAttribute("aria-current", "true");
-        else a.removeAttribute("aria-current");
-      });
+      mark(id);
     }
     function schedule() {
       if (!pending) { pending = true; requestAnimationFrame(update); }
     }
-    window.addEventListener("scroll", schedule, { passive: true });
+    function armUnlock() {  // release the click's mark 200ms after the last scroll event
+      clearTimeout(unlockTimer);
+      unlockTimer = setTimeout(function () { locked = null; update(); }, 200);
+    }
+    links.forEach(function (a) {
+      a.addEventListener("click", function () { locked = targetOf(a); mark(locked); armUnlock(); });
+    });
+    window.addEventListener("scroll", function () { if (locked) armUnlock(); schedule(); }, { passive: true });
     window.addEventListener("resize", schedule);
     update();
   })();

@@ -14,6 +14,8 @@
 
 :root {
   color-scheme: dark;
+  /* no elastic bounce past the page edges, which showed a dark band above the red hero */
+  overscroll-behavior-y: none;
   --bg: #101820;
   --accent-bg: #971b2f;
   --text: #d9d9d6;
@@ -71,29 +73,56 @@ html.nav-js .nav-links {
   overflow: hidden;
 }
 
+/* The sections are plain text without the theme's box; the current (aria-current, set by
+   the script in custom_body.html) and the hovered one get an accent line underneath. The
+   line is a bottom border, always present but transparent, so nothing shifts when it shows. */
 header nav a,
 header nav a:visited {
   flex: none;
   white-space: nowrap;
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  padding: 0.1rem 0.2rem;
+  margin: 0 0.6rem 1rem 0.6rem;
+  text-decoration: none;
+  line-height: 2;
+  transition: color 0.15s, border-color 0.15s;
   -webkit-tap-highlight-color: transparent;
 }
 
-/* The theme turns the buttons into underlined links below 720px: keep the buttons */
+/* hover: brighter text and a faint line, so it is not mistaken for the current section */
+header nav a:hover {
+  background: none;
+  border-color: transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+header nav a[aria-current="true"],
+.nav-links a[aria-current="true"]:hover {
+  background: none;
+  border-color: transparent;
+  border-bottom-color: var(--accent);
+  color: var(--accent);
+}
+
+/* The theme turns the sections into underlined links below 720px: keep the style above */
 @media only screen and (max-width: 720px) {
   header nav a,
   header nav a:visited {
-    border: var(--border-width) solid var(--border);
-    padding: 0.1rem 1rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.1rem 0.2rem;
     text-decoration: none;
     line-height: 2;
   }
 }
 
-/* Touch screens have no real hover: a tapped button would otherwise stay highlighted */
+/* Touch screens have no real hover: a tapped section would otherwise stay highlighted */
 @media (hover: none) {
-  header nav a:hover {
-    background: none;
-    border-color: var(--border);
+  header nav a:hover:not([aria-current="true"]) {
+    border-bottom-color: transparent;
     color: var(--text);
   }
 }
@@ -102,8 +131,8 @@ header nav a:visited {
 @media only screen and (max-width: 520px) {
   header nav a,
   header nav a:visited {
-    margin: 0 0.2rem 1rem 0.2rem;
-    padding: 0.1rem 0.55rem;
+    margin: 0 0.4rem 1rem 0.4rem;
+    padding: 0.1rem 0.1rem;
     font-size: 0.95rem;
   }
 
@@ -124,25 +153,26 @@ header nav a:visited {
   display: none;
 }
 
-/* the ☰ button looks like the menu buttons (overrides the theme's button style) */
+/* the ☰ button looks like the menu sections (overrides the theme's button style) */
 .nav-more-button,
 .nav-more-button:enabled:hover {
   margin: 0 0.5rem 1rem 0.5rem;
-  padding: 0.1rem 0.9rem;
+  padding: 0.1rem 0.4rem;
   font-size: 1rem;
   line-height: 2;
   background: none;
   color: var(--text);
-  border: var(--border-width) solid var(--border);
-  border-radius: var(--standard-border-radius);
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  transition: color 0.15s, border-color 0.15s;
   -webkit-tap-highlight-color: transparent;
 }
 
 @media (hover: hover) {
   .nav-more-button:enabled:hover {
-    background: var(--bg);
-    border-color: var(--accent);
-    color: var(--accent);
+    border-bottom-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
   }
 }
 
